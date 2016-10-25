@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		953FA9211DC00E07009EE892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9201DC00E07009EE892 /* main.m */; };
+		953FA9241DC00E07009EE892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* AppDelegate.m */; };
+		953FA9271DC00E07009EE892 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9261DC00E07009EE892 /* ViewController.m */; };
+		953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9281DC00E07009EE892 /* Main.storyboard */; };
+		953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953FA92B1DC00E07009EE892 /* Assets.xcassets */; };
+		953FA92F1DC00E07009EE892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */; };
+		953FA93A1DC00E07009EE892 /* KappenballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9391DC00E07009EE892 /* KappenballTests.m */; };
+		953FA9451DC00E07009EE892 /* KappenballUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9441DC00E07009EE892 /* KappenballUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		953FA9361DC00E07009EE892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 953FA9141DC00E07009EE892 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 953FA91B1DC00E07009EE892;
+			remoteInfo = Kappenball;
+		};
+		953FA9411DC00E07009EE892 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 953FA9141DC00E07009EE892 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 953FA91B1DC00E07009EE892;
+			remoteInfo = Kappenball;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		953FA91C1DC00E07009EE892 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		953FA9201DC00E07009EE892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		953FA9221DC00E07009EE892 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		953FA9231DC00E07009EE892 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		953FA9251DC00E07009EE892 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		953FA9261DC00E07009EE892 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		953FA9291DC00E07009EE892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		953FA92B1DC00E07009EE892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		953FA92E1DC00E07009EE892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		953FA9301DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		953FA9351DC00E07009EE892 /* KappenballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KappenballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		953FA9391DC00E07009EE892 /* KappenballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballTests.m; sourceTree = "<group>"; };
+		953FA93B1DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		953FA9401DC00E07009EE892 /* KappenballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KappenballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		953FA9441DC00E07009EE892 /* KappenballUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballUITests.m; sourceTree = "<group>"; };
+		953FA9461DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		953FA9191DC00E07009EE892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953FA9321DC00E07009EE892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953FA93D1DC00E07009EE892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		953FA9131DC00E07009EE892 = {
+			isa = PBXGroup;
+			children = (
+				953FA91E1DC00E07009EE892 /* Kappenball */,
+				953FA9381DC00E07009EE892 /* KappenballTests */,
+				953FA9431DC00E07009EE892 /* KappenballUITests */,
+				953FA91D1DC00E07009EE892 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		953FA91D1DC00E07009EE892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				953FA91C1DC00E07009EE892 /* Kappenball.app */,
+				953FA9351DC00E07009EE892 /* KappenballTests.xctest */,
+				953FA9401DC00E07009EE892 /* KappenballUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		953FA91E1DC00E07009EE892 /* Kappenball */ = {
+			isa = PBXGroup;
+			children = (
+				953FA9221DC00E07009EE892 /* AppDelegate.h */,
+				953FA9231DC00E07009EE892 /* AppDelegate.m */,
+				953FA9251DC00E07009EE892 /* ViewController.h */,
+				953FA9261DC00E07009EE892 /* ViewController.m */,
+				953FA9281DC00E07009EE892 /* Main.storyboard */,
+				953FA92B1DC00E07009EE892 /* Assets.xcassets */,
+				953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */,
+				953FA9301DC00E07009EE892 /* Info.plist */,
+				953FA91F1DC00E07009EE892 /* Supporting Files */,
+			);
+			path = Kappenball;
+			sourceTree = "<group>";
+		};
+		953FA91F1DC00E07009EE892 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				953FA9201DC00E07009EE892 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		953FA9381DC00E07009EE892 /* KappenballTests */ = {
+			isa = PBXGroup;
+			children = (
+				953FA9391DC00E07009EE892 /* KappenballTests.m */,
+				953FA93B1DC00E07009EE892 /* Info.plist */,
+			);
+			path = KappenballTests;
+			sourceTree = "<group>";
+		};
+		953FA9431DC00E07009EE892 /* KappenballUITests */ = {
+			isa = PBXGroup;
+			children = (
+				953FA9441DC00E07009EE892 /* KappenballUITests.m */,
+				953FA9461DC00E07009EE892 /* Info.plist */,
+			);
+			path = KappenballUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		953FA91B1DC00E07009EE892 /* Kappenball */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953FA9491DC00E07009EE892 /* Build configuration list for PBXNativeTarget "Kappenball" */;
+			buildPhases = (
+				953FA9181DC00E07009EE892 /* Sources */,
+				953FA9191DC00E07009EE892 /* Frameworks */,
+				953FA91A1DC00E07009EE892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kappenball;
+			productName = Kappenball;
+			productReference = 953FA91C1DC00E07009EE892 /* Kappenball.app */;
+			productType = "com.apple.product-type.application";
+		};
+		953FA9341DC00E07009EE892 /* KappenballTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953FA94C1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballTests" */;
+			buildPhases = (
+				953FA9311DC00E07009EE892 /* Sources */,
+				953FA9321DC00E07009EE892 /* Frameworks */,
+				953FA9331DC00E07009EE892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				953FA9371DC00E07009EE892 /* PBXTargetDependency */,
+			);
+			name = KappenballTests;
+			productName = KappenballTests;
+			productReference = 953FA9351DC00E07009EE892 /* KappenballTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		953FA93F1DC00E07009EE892 /* KappenballUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953FA94F1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballUITests" */;
+			buildPhases = (
+				953FA93C1DC00E07009EE892 /* Sources */,
+				953FA93D1DC00E07009EE892 /* Frameworks */,
+				953FA93E1DC00E07009EE892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				953FA9421DC00E07009EE892 /* PBXTargetDependency */,
+			);
+			name = KappenballUITests;
+			productName = KappenballUITests;
+			productReference = 953FA9401DC00E07009EE892 /* KappenballUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		953FA9141DC00E07009EE892 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Darren Vong";
+				TargetAttributes = {
+					953FA91B1DC00E07009EE892 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					953FA9341DC00E07009EE892 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 953FA91B1DC00E07009EE892;
+					};
+					953FA93F1DC00E07009EE892 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 953FA91B1DC00E07009EE892;
+					};
+				};
+			};
+			buildConfigurationList = 953FA9171DC00E07009EE892 /* Build configuration list for PBXProject "Kappenball" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 953FA9131DC00E07009EE892;
+			productRefGroup = 953FA91D1DC00E07009EE892 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				953FA91B1DC00E07009EE892 /* Kappenball */,
+				953FA9341DC00E07009EE892 /* KappenballTests */,
+				953FA93F1DC00E07009EE892 /* KappenballUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		953FA91A1DC00E07009EE892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953FA92F1DC00E07009EE892 /* LaunchScreen.storyboard in Resources */,
+				953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */,
+				953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953FA9331DC00E07009EE892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953FA93E1DC00E07009EE892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		953FA9181DC00E07009EE892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953FA9271DC00E07009EE892 /* ViewController.m in Sources */,
+				953FA9241DC00E07009EE892 /* AppDelegate.m in Sources */,
+				953FA9211DC00E07009EE892 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953FA9311DC00E07009EE892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953FA93A1DC00E07009EE892 /* KappenballTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953FA93C1DC00E07009EE892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953FA9451DC00E07009EE892 /* KappenballUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		953FA9371DC00E07009EE892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 953FA91B1DC00E07009EE892 /* Kappenball */;
+			targetProxy = 953FA9361DC00E07009EE892 /* PBXContainerItemProxy */;
+		};
+		953FA9421DC00E07009EE892 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 953FA91B1DC00E07009EE892 /* Kappenball */;
+			targetProxy = 953FA9411DC00E07009EE892 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		953FA9281DC00E07009EE892 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				953FA9291DC00E07009EE892 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				953FA92E1DC00E07009EE892 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		953FA9471DC00E07009EE892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		953FA9481DC00E07009EE892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		953FA94A1DC00E07009EE892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kappenball/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.Kappenball;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		953FA94B1DC00E07009EE892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kappenball/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.Kappenball;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		953FA94D1DC00E07009EE892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KappenballTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kappenball.app/Kappenball";
+			};
+			name = Debug;
+		};
+		953FA94E1DC00E07009EE892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KappenballTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kappenball.app/Kappenball";
+			};
+			name = Release;
+		};
+		953FA9501DC00E07009EE892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KappenballUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Kappenball;
+			};
+			name = Debug;
+		};
+		953FA9511DC00E07009EE892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KappenballUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Kappenball;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		953FA9171DC00E07009EE892 /* Build configuration list for PBXProject "Kappenball" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953FA9471DC00E07009EE892 /* Debug */,
+				953FA9481DC00E07009EE892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		953FA9491DC00E07009EE892 /* Build configuration list for PBXNativeTarget "Kappenball" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953FA94A1DC00E07009EE892 /* Debug */,
+				953FA94B1DC00E07009EE892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		953FA94C1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953FA94D1DC00E07009EE892 /* Debug */,
+				953FA94E1DC00E07009EE892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		953FA94F1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953FA9501DC00E07009EE892 /* Debug */,
+				953FA9511DC00E07009EE892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 953FA9141DC00E07009EE892 /* Project object */;
+}
