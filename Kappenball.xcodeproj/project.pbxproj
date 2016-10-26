@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20F50D7B1DC1069600997B6B /* BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F50D7A1DC1069600997B6B /* BallView.m */; };
 		953FA9211DC00E07009EE892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9201DC00E07009EE892 /* main.m */; };
 		953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */; };
 		953FA9271DC00E07009EE892 /* KappenBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9261DC00E07009EE892 /* KappenBallViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20F50D791DC1069600997B6B /* BallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallView.h; sourceTree = "<group>"; };
+		20F50D7A1DC1069600997B6B /* BallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallView.m; sourceTree = "<group>"; };
 		953FA91C1DC00E07009EE892 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953FA9201DC00E07009EE892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		953FA9221DC00E07009EE892 /* KappenBallAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenBallAppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				953FA9261DC00E07009EE892 /* KappenBallViewController.m */,
 				953FA9521DC00ED7009EE892 /* GameModel.h */,
 				953FA9591DC01A1A009EE892 /* BallModel.h */,
+				20F50D791DC1069600997B6B /* BallView.h */,
+				20F50D7A1DC1069600997B6B /* BallView.m */,
 				953FA95A1DC01A1B009EE892 /* BallModel.m */,
 				953FA9531DC00ED7009EE892 /* GameModel.m */,
 				953FA9281DC00E07009EE892 /* Main.storyboard */,
@@ -293,6 +298,7 @@
 				953FA95B1DC01A1B009EE892 /* BallModel.m in Sources */,
 				953FA9211DC00E07009EE892 /* main.m in Sources */,
 				953FA9541DC00ED7009EE892 /* GameModel.m in Sources */,
+				20F50D7B1DC1069600997B6B /* BallView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +522,7 @@
 				953FA94B1DC00E07009EE892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		953FA94C1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +531,7 @@
 				953FA94E1DC00E07009EE892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		953FA94F1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +540,7 @@
 				953FA9511DC00E07009EE892 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

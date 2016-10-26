@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BallView.h"
 
 @interface BallModel : NSObject
+
+@property (strong) BallView* ball;
 
 @property (assign) float velocity;
 @property (assign) float acceleration;
 @property (assign) float randFactor;
+
+-(id)initWithFrame:(CGRect)frame;
 
 @end

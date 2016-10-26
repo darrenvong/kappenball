@@ -19,7 +19,6 @@
 @property (strong) NSTimer* timer;
 
 @property (weak) IBOutlet UIImageView* background;
-@property (weak) IBOutlet UIImageView* ball;
 
 // Score labels
 @property (weak) IBOutlet UILabel* score;

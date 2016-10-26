@@ -11,12 +11,14 @@
 @implementation KappenBallViewController
 
 -(void)update {
-    self.ball.transform = CGAffineTransformTranslate(self.ball.transform, 0.0, 1.0);
+//    self.ball.transform = CGAffineTransformTranslate(self.ball.transform, 0.0, 1.0);
+    
     // Alternative method to move ball below... obviously needs to be updated to match model & given formula in assignment later
 //    CGPoint pos = self.ball.center;
 //    pos.y += 2;
 //    self.ball.center = pos;
-    NSLog(@"(%1.1f, %1.1f)", self.ball.frame.origin.x, self.ball.frame.origin.y);
+    
+//    NSLog(@"(%1.1f, %1.1f)", self.ball.frame.origin.x, self.ball.frame.origin.y);
     
 }
 
@@ -27,7 +29,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    
+    self.ballModel = [[BallModel alloc]initWithFrame:self.background.bounds];
+    [self.background addSubview:self.ballModel.ball];
+    
+//    self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
+//    [self.background addSubview:self.ball];
+//    CGPoint pos = self.ball.center;
+//    pos.x = 0;
+//    pos.y = 0;
+//    self.ball.center = pos;
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(update) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {

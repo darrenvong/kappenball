@@ -15,4 +15,18 @@
 
 @implementation BallModel
 
+-(id)initWithFrame:(CGRect)frame {
+    self = [super init];
+    if (self) {
+        // Placeholder values for now...
+        _velocity = 0.0;
+        _acceleration = 0.0;
+        _randFactor = 0.0;
+        
+        _ball = [[BallView alloc]initWithFrame:frame];
+    }
+    
+    return self;
+}
+
 @end
