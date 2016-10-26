@@ -6,17 +6,14 @@
 //  Copyright © 2016 Darren Vong. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "KappenBallAppDelegate.h"
 
-@interface AppDelegate ()
-
-@end
-
-@implementation AppDelegate
+@implementation KappenBallAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 

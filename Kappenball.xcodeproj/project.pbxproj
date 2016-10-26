@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		953FA9211DC00E07009EE892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9201DC00E07009EE892 /* main.m */; };
-		953FA9241DC00E07009EE892 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* AppDelegate.m */; };
-		953FA9271DC00E07009EE892 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9261DC00E07009EE892 /* ViewController.m */; };
+		953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */; };
+		953FA9271DC00E07009EE892 /* KappenBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9261DC00E07009EE892 /* KappenBallViewController.m */; };
 		953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9281DC00E07009EE892 /* Main.storyboard */; };
 		953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953FA92B1DC00E07009EE892 /* Assets.xcassets */; };
 		953FA92F1DC00E07009EE892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */; };
 		953FA93A1DC00E07009EE892 /* KappenballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9391DC00E07009EE892 /* KappenballTests.m */; };
 		953FA9451DC00E07009EE892 /* KappenballUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9441DC00E07009EE892 /* KappenballUITests.m */; };
+		953FA9541DC00ED7009EE892 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9531DC00ED7009EE892 /* GameModel.m */; };
+		953FA9561DC01090009EE892 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9551DC01090009EE892 /* ball.png */; };
+		953FA9581DC0109F009EE892 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9571DC0109F009EE892 /* field.png */; };
+		953FA95B1DC01A1B009EE892 /* BallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA95A1DC01A1B009EE892 /* BallModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +41,10 @@
 /* Begin PBXFileReference section */
 		953FA91C1DC00E07009EE892 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953FA9201DC00E07009EE892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		953FA9221DC00E07009EE892 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		953FA9231DC00E07009EE892 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		953FA9251DC00E07009EE892 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		953FA9261DC00E07009EE892 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		953FA9221DC00E07009EE892 /* KappenBallAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenBallAppDelegate.h; sourceTree = "<group>"; };
+		953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenBallAppDelegate.m; sourceTree = "<group>"; };
+		953FA9251DC00E07009EE892 /* KappenBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenBallViewController.h; sourceTree = "<group>"; };
+		953FA9261DC00E07009EE892 /* KappenBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenBallViewController.m; sourceTree = "<group>"; };
 		953FA9291DC00E07009EE892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		953FA92B1DC00E07009EE892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		953FA92E1DC00E07009EE892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,12 @@
 		953FA9401DC00E07009EE892 /* KappenballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KappenballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		953FA9441DC00E07009EE892 /* KappenballUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballUITests.m; sourceTree = "<group>"; };
 		953FA9461DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		953FA9521DC00ED7009EE892 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		953FA9531DC00ED7009EE892 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		953FA9551DC01090009EE892 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		953FA9571DC0109F009EE892 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
+		953FA9591DC01A1A009EE892 /* BallModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallModel.h; sourceTree = "<group>"; };
+		953FA95A1DC01A1B009EE892 /* BallModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +111,14 @@
 		953FA91E1DC00E07009EE892 /* Kappenball */ = {
 			isa = PBXGroup;
 			children = (
-				953FA9221DC00E07009EE892 /* AppDelegate.h */,
-				953FA9231DC00E07009EE892 /* AppDelegate.m */,
-				953FA9251DC00E07009EE892 /* ViewController.h */,
-				953FA9261DC00E07009EE892 /* ViewController.m */,
+				953FA9221DC00E07009EE892 /* KappenBallAppDelegate.h */,
+				953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */,
+				953FA9251DC00E07009EE892 /* KappenBallViewController.h */,
+				953FA9261DC00E07009EE892 /* KappenBallViewController.m */,
+				953FA9521DC00ED7009EE892 /* GameModel.h */,
+				953FA9591DC01A1A009EE892 /* BallModel.h */,
+				953FA95A1DC01A1B009EE892 /* BallModel.m */,
+				953FA9531DC00ED7009EE892 /* GameModel.m */,
 				953FA9281DC00E07009EE892 /* Main.storyboard */,
 				953FA92B1DC00E07009EE892 /* Assets.xcassets */,
 				953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */,
@@ -117,6 +131,8 @@
 		953FA91F1DC00E07009EE892 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				953FA9571DC0109F009EE892 /* field.png */,
+				953FA9551DC01090009EE892 /* ball.png */,
 				953FA9201DC00E07009EE892 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -244,7 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				953FA92F1DC00E07009EE892 /* LaunchScreen.storyboard in Resources */,
+				953FA9581DC0109F009EE892 /* field.png in Resources */,
 				953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */,
+				953FA9561DC01090009EE892 /* ball.png in Resources */,
 				953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953FA9271DC00E07009EE892 /* ViewController.m in Sources */,
-				953FA9241DC00E07009EE892 /* AppDelegate.m in Sources */,
+				953FA9271DC00E07009EE892 /* KappenBallViewController.m in Sources */,
+				953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */,
+				953FA95B1DC01A1B009EE892 /* BallModel.m in Sources */,
 				953FA9211DC00E07009EE892 /* main.m in Sources */,
+				953FA9541DC00ED7009EE892 /* GameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

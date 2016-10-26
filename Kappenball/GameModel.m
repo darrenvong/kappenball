@@ -1,15 +1,15 @@
 //
-//  ViewController.h
+//  GameModel.m
 //  Kappenball
+//
+//  The game model holds score data of the current game.
 //
 //  Created by Darren Vong on 25/10/2016.
 //  Copyright © 2016 Darren Vong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GameModel.h"
 
-@interface ViewController : UIViewController
-
+@implementation GameModel
 
 @end
-

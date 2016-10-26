@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KappenBallViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface KappenBallAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
