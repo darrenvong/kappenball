@@ -14,4 +14,6 @@
 @property (assign) float average;
 @property (assign) int energy;
 
+-(void)reset;
+
 @end
