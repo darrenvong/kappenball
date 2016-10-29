@@ -55,7 +55,7 @@
     self.gameModel = [[GameModel alloc]init];
     [self updateAllScoreLabels];
     
-    self.ballModel = [[BallModel alloc]initWithScreenWidth:self.background.bounds.size.width];
+    self.ballModel = [[BallModel alloc]init];
     self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
     [self.background addSubview:self.ball];
     

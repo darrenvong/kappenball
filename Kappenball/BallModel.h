@@ -20,8 +20,18 @@
 @property (assign) float acceleration;
 @property (assign) float randFactor;
 
--(id)initWithScreenWidth:(float)width;
+// Convenient coordinate conversion helpers from the center of the ball to the different position of the ball
+-(float)getLeftX;
+-(float)getRightX;
+-(float)getBottomY;
+
+-(void)checkForWalls;
+-(void)checkForTraps;
+-(void)checkForGoals;
+
 -(void)updateBallPos;
 -(void)updateVelocity;
+
+-(void)resetBallPos;
 
 @end
