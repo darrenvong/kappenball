@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20F50D7B1DC1069600997B6B /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F50D7A1DC1069600997B6B /* Ball.m */; };
+		9518B0671DC4CBCD0069BF5F /* BallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9518B0661DC4CBCD0069BF5F /* BallModel.m */; };
 		953FA9211DC00E07009EE892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9201DC00E07009EE892 /* main.m */; };
 		953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */; };
 		953FA9271DC00E07009EE892 /* KappenBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9261DC00E07009EE892 /* KappenBallViewController.m */; };
@@ -39,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20F50D791DC1069600997B6B /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
-		20F50D7A1DC1069600997B6B /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ball.m; sourceTree = "<group>"; };
+		9518B0651DC4CBCD0069BF5F /* BallModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallModel.h; sourceTree = "<group>"; };
+		9518B0661DC4CBCD0069BF5F /* BallModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallModel.m; sourceTree = "<group>"; };
 		953FA91C1DC00E07009EE892 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953FA9201DC00E07009EE892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		953FA9221DC00E07009EE892 /* KappenBallAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenBallAppDelegate.h; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 				953FA9251DC00E07009EE892 /* KappenBallViewController.h */,
 				953FA9261DC00E07009EE892 /* KappenBallViewController.m */,
 				953FA9521DC00ED7009EE892 /* GameModel.h */,
-				20F50D791DC1069600997B6B /* Ball.h */,
-				20F50D7A1DC1069600997B6B /* Ball.m */,
+				9518B0651DC4CBCD0069BF5F /* BallModel.h */,
+				9518B0661DC4CBCD0069BF5F /* BallModel.m */,
 				953FA9531DC00ED7009EE892 /* GameModel.m */,
 				953FA9281DC00E07009EE892 /* Main.storyboard */,
 				953FA92B1DC00E07009EE892 /* Assets.xcassets */,
@@ -292,7 +292,7 @@
 				953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */,
 				953FA9211DC00E07009EE892 /* main.m in Sources */,
 				953FA9541DC00ED7009EE892 /* GameModel.m in Sources */,
-				20F50D7B1DC1069600997B6B /* Ball.m in Sources */,
+				9518B0671DC4CBCD0069BF5F /* BallModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

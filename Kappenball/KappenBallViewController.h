@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "GameModel.h"
-#import "Ball.h"
+#import "BallModel.h"
 
 @interface KappenBallViewController : UIViewController
 
 @property (strong) GameModel* gameModel;
-@property (strong) Ball* ball;
+@property (strong) BallModel* ballModel;
 
 //Timer for animating the position of the ball
 @property (strong) NSTimer* timer;
 
 @property (weak) IBOutlet UIImageView* background;
+@property (strong) UIImageView* ball;
 
 // Score labels
 @property (weak) IBOutlet UILabel* score;
@@ -30,7 +31,7 @@
 
 @property (weak) IBOutlet UIButton* reset;
 
--(void)updateBallPos;
+-(void)updateView;
 -(IBAction)sliderMoved:(id)sender;
 -(IBAction)resetButtonPressed:(id)sender;
 

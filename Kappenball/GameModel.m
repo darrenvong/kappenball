@@ -24,7 +24,7 @@
 
 -(void)reset {
     self.score = 0;
-    self.average = 0;
+    self.average = 0.0;
     self.energy = 0;
 }
 
