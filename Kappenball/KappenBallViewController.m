@@ -8,11 +8,19 @@
 
 #import "KappenBallViewController.h"
 
+#define GAME_WINDOW_WIDTH 611
+#define GAME_WINDOW_HEIGHT 322
 #define TRAP_HEIGHT 58
 #define WALL_WIDTH 20
 #define BALL_SIZE 31
 
 @implementation KappenBallViewController
+
+-(void)updateAllScoreLabels {
+    self.score.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
+    self.average.text = [NSString stringWithFormat:@"Average: %1.0f", self.gameModel.average];
+    self.energy.text = [NSString stringWithFormat:@"Energy: %d", self.gameModel.energy];
+}
 
 -(void)updateView {
     [self.ballModel updateBallPos];
@@ -33,6 +41,8 @@
 
 -(IBAction)resetButtonPressed:(id)sender {
     // Reset the label score when reset button is pressed
+    [self.gameModel reset];
+    [self updateAllScoreLabels];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -48,12 +58,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.gameModel = [[GameModel alloc]init];
-    //Set the game labels to model data (possibly put this in a method?)
-    self.score.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
-    self.average.text = [NSString stringWithFormat:@"Average: %1.0f", self.gameModel.average];
-    self.energy.text = [NSString stringWithFormat:@"Energy: %d", self.gameModel.energy];
+    [self updateAllScoreLabels];
     
-    self.ballModel = [[BallModel alloc]initWithScreenWidth:self.background.bounds.size.width];
+    self.ballModel = [[BallModel alloc]initWithScreenWidth:GAME_WINDOW_WIDTH];
     self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
     [self.background addSubview:self.ball];
     

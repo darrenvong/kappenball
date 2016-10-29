@@ -32,6 +32,7 @@
 @property (weak) IBOutlet UIButton* reset;
 
 -(void)updateView;
+-(void)updateAllScoreLabels;
 -(IBAction)sliderMoved:(id)sender;
 -(IBAction)resetButtonPressed:(id)sender;
 
