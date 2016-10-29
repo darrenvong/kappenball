@@ -8,8 +8,6 @@
 
 #import "KappenBallViewController.h"
 
-#define SCREEN_WIDTH 736
-#define SCREEN_HEIGHT 414
 #define TRAP_HEIGHT 58
 #define WALL_WIDTH 20
 
