@@ -8,12 +8,6 @@
 
 #import "KappenBallViewController.h"
 
-#define GAME_WINDOW_WIDTH 611
-#define GAME_WINDOW_HEIGHT 322
-#define TRAP_HEIGHT 58
-#define WALL_WIDTH 20
-#define BALL_SIZE 31
-
 @implementation KappenBallViewController
 
 -(void)updateAllScoreLabels {
@@ -24,13 +18,14 @@
 
 -(void)updateView {
     [self.ballModel updateBallPos];
-    CGPoint pos = self.ball.center;
+    CGPoint pos = self.ball.frame.origin;
     pos.x = self.ballModel.x;
     pos.y = self.ballModel.y;
     self.ball.center = pos;
     
     NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
-    NSLog(@"Ball velocity: %f, acceleration: %f", self.ballModel.velocity, self.ballModel.acceleration);
+    NSLog(@"ball origin: (%1.1f, %1.1f)", self.ball.frame.origin.x, self.ball.frame.origin.y);
+//    NSLog(@"Ball velocity: %f, acceleration: %f", self.ballModel.velocity, self.ballModel.acceleration);
     NSLog(@"random factor: %f, RAND: %d", self.ballModel.randFactor, self.ballModel.RAND);
 }
 
@@ -60,12 +55,11 @@
     self.gameModel = [[GameModel alloc]init];
     [self updateAllScoreLabels];
     
-    self.ballModel = [[BallModel alloc]initWithScreenWidth:GAME_WINDOW_WIDTH];
+    self.ballModel = [[BallModel alloc]initWithScreenWidth:self.background.bounds.size.width];
     self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
     [self.background addSubview:self.ball];
     
     //Set the ball's initial x coordinate
-    NSLog(@"Background bounds over 2 = %f", self.background.bounds.size.width / 2);
     CGPoint pos = self.ball.center;
     pos.x = self.ballModel.x;
     self.ball.center = pos;

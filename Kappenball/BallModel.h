@@ -12,6 +12,7 @@
 
 @property (assign) int RAND;
 
+// These keep track of the ball's position using the ball's center
 @property (assign) float x;
 @property (assign) float y;
 
