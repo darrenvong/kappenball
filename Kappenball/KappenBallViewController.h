@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "GameModel.h"
-#import "BallModel.h"
+#import "GameModel.h"
 
 @interface KappenBallViewController : UIViewController
 
 @property (strong) GameModel* gameModel;
-@property (strong) BallModel* ballModel;
 
 //Timer for animating the position of the ball
 @property (strong) NSTimer* timer;

@@ -17,26 +17,26 @@
 }
 
 -(void)updateView {
-    [self.ballModel updateBallPos];
-    CGPoint pos = self.ball.frame.origin;
-    pos.x = self.ballModel.x;
-    pos.y = self.ballModel.y;
+    [self.gameModel updateBallPos];
+    CGPoint pos = self.ball.center;
+    pos.x = self.gameModel.ballXPos;
+    pos.y = self.gameModel.ballYPos;
     self.ball.center = pos;
     
 //    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
-//    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.ballModel.RAND);
-//    NSLog(@"Ball velocity: %f, acceleration: %f", self.ballModel.velocity, self.ballModel.acceleration);
-//    NSLog(@"random factor: %f, RAND: %d", self.ballModel.randFactor, self.ballModel.RAND);
+//    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.gameModel.ball.RAND);
+//    NSLog(@"Ball velocity: %f, acceleration: %f", self.gameModel.ball.velocity, self.gameModel.ball.acceleration);
+//    NSLog(@"random factor: %f, RAND: %d", self.gameModel.ball.randFactor, self.gameModel.ball.RAND);
 }
 
 -(IBAction)sliderMoved:(id)sender {
     // Change the randomness factor when slider changes
-    self.ballModel.randFactor = self.randFactor.value;
+    self.gameModel.randFactor = self.randFactor.value;
 }
 
 -(IBAction)resetButtonPressed:(id)sender {
     // Reset the label score when reset button is pressed
-    [self.gameModel reset];
+    [self.gameModel resetScores];
     [self updateAllScoreLabels];
 }
 
@@ -55,21 +55,20 @@
     self.gameModel = [[GameModel alloc]init];
     [self updateAllScoreLabels];
     
-    self.ballModel = [[BallModel alloc]init];
     self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
     [self.background addSubview:self.ball];
     
     //Set the ball's initial x coordinate
     CGPoint pos = self.ball.center;
-    pos.x = self.ballModel.x;
+    pos.x = self.gameModel.ballXPos;
     self.ball.center = pos;
     
     
     // initialise slider's randomness factor to 0 to begin with
-    self.randFactor.value = self.ballModel.randFactor;
+    self.randFactor.value = self.gameModel.randFactor;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateView) userInfo:nil repeats:YES];
-    NSLog(@"RAND: %d", self.ballModel.RAND);
+    NSLog(@"RAND: %d", self.gameModel.RAND);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,8 +77,8 @@
 }
 
 -(IBAction)flipped:(id)sender {
-    self.ballModel.RAND = -self.ballModel.RAND;
-    NSLog(@"RAND: %d", self.ballModel.RAND);
+    self.gameModel.RAND = -self.gameModel.RAND;
+    NSLog(@"RAND: %d", self.gameModel.RAND);
 }
 
 @end
