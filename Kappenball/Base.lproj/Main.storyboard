@@ -54,11 +54,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t4E-ib-pOg">
-                                <rect key="frame" x="28" y="375" width="77" height="30"/>
+                                <rect key="frame" x="20" y="375" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Flip RAND"/>
+                                <state key="normal" title="RAND"/>
                                 <connections>
                                     <action selector="flipped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2B-Fs-XYR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KgF-Ho-jk8">
+                                <rect key="frame" x="72" y="375" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Energy"/>
+                                <connections>
+                                    <action selector="boosted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PjV-vJ-OtV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,6 +78,7 @@
                         <outlet property="average" destination="1Kw-Dq-JQo" id="qEz-HE-WD4"/>
                         <outlet property="background" destination="vAe-yy-Ecr" id="4Oz-Fb-NmY"/>
                         <outlet property="energy" destination="qPw-kD-jVG" id="45t-rM-c3k"/>
+                        <outlet property="energyBoost" destination="KgF-Ho-jk8" id="6UI-6g-SoL"/>
                         <outlet property="flip" destination="t4E-ib-pOg" id="Yfq-iY-x2S"/>
                         <outlet property="randFactor" destination="TK8-4q-P9U" id="acR-pL-evt"/>
                         <outlet property="reset" destination="W6D-7M-3zk" id="sbx-32-slY"/>

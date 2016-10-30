@@ -36,7 +36,7 @@
 -(void)adjustForTraps;
 -(void)adjustForGoals;
 
--(void)updateBallPos;
+-(void)updateGameState;
 -(void)updateVelocity;
 
 -(void)resetBallState;

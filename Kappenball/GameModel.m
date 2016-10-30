@@ -116,14 +116,17 @@ const float DELTA = BALL_SIZE / 2.0;
     
 }
 
-// Checks whether the ball has dropped next to the trap spikes. If it has, the position of the ball is
-// reset to the top centre of the screen
+// Checks whether the ball has dropped through the trap spikes when it drops below a certain y-coordinate level.
+// If it has, the position of the ball is reset to the top centre of the screen and the energy expended for the
+// current attempt is reset. Otherwise, it sets the flag isInGoal to YES (true) to keep track of
+// the fact the ball is safe from being spiked.
 -(void)adjustForTraps {
     // The bottom of the ball has passed the "y-threshold line" - i.e. it could have hit a trap or in goal
     if ([self getBottomY] >= GAME_WINDOW_HEIGHT - TRAPS_HEIGHT) {
         // Reset ball position only if the ball was not in goal in the previous game tick
         if ([self isInTrapRange] && !self.isInGoal) {
             NSLog(@"Ball spiked!");
+            self.energy = 0;
             [self resetBallState];
         }
         else {
@@ -133,14 +136,18 @@ const float DELTA = BALL_SIZE / 2.0;
     }
 }
 
+// Checks whether the ball has dropped through the goal and if it has, then the position of the ball is
+// reset to the top centre of the screen and the respective scores are updated.
 -(void)adjustForGoals {
     if (self.isInGoal && [self getBottomY] >= GAME_WINDOW_HEIGHT) {
         NSLog(@"Point scored!");
+        self.score += 1;
+        self.energy = 0;
         [self resetBallState];
     }
 }
 
--(void)updateBallPos {
+-(void)updateGameState {
     [self updateVelocity];
     
     self.ballXPos = self.ballXPos + self.velocity * DT;

@@ -32,7 +32,9 @@
 
 // For testing only. Need to be removed later
 @property (weak) IBOutlet UIButton* flip;
+@property (weak) IBOutlet UIButton* energyBoost;
 -(IBAction)flipped:(id)sender;
+-(IBAction)boosted:(id)sender;
 
 -(void)updateView;
 -(void)updateAllScoreLabels;

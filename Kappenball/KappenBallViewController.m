@@ -17,11 +17,13 @@
 }
 
 -(void)updateView {
-    [self.gameModel updateBallPos];
+    [self.gameModel updateGameState];
     CGPoint pos = self.ball.center;
     pos.x = self.gameModel.ballXPos;
     pos.y = self.gameModel.ballYPos;
     self.ball.center = pos;
+    
+    [self updateAllScoreLabels];
     
 //    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
 //    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.gameModel.ball.RAND);
@@ -76,9 +78,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+// REMEMBER TO REMOVE THESE....!!!!!!!!!
 -(IBAction)flipped:(id)sender {
     self.gameModel.RAND = -self.gameModel.RAND;
     NSLog(@"RAND: %d", self.gameModel.RAND);
+}
+
+-(IBAction)boosted:(id)sender {
+    self.gameModel.energy += 1;
 }
 
 @end
