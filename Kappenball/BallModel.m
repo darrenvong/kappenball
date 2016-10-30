@@ -14,13 +14,16 @@
 
 // Useful constants for wall/trap/goal detection
 #define WALL_WIDTH 15
-#define SIDE_TRAPS_WIDTH 140
-#define MIDDLE_TRAP_WIDTH 205
+#define SIDE_TRAPS_WIDTH 135
+#define MIDDLE_TRAP_WIDTH 190
 #define TRAPS_HEIGHT 50
 #define BALL_SIZE 31
 #define GAME_WINDOW_WIDTH 611
 #define GAME_WINDOW_HEIGHT 322
 const int GOAL_WIDTH = (GAME_WINDOW_WIDTH - MIDDLE_TRAP_WIDTH - (2 * SIDE_TRAPS_WIDTH)) / 2;
+
+// Used to provide upper/lower bounds to check if the ball is in the left goal or the right goal
+const float DELTA = BALL_SIZE / 2.0;
 
 @implementation BallModel
 
@@ -33,6 +36,7 @@ const int GOAL_WIDTH = (GAME_WINDOW_WIDTH - MIDDLE_TRAP_WIDTH - (2 * SIDE_TRAPS_
         _RAND = (arc4random() % 41) - 20;
         _x = GAME_WINDOW_WIDTH / 2.0;
         _y = 0.0;
+        _isInGoal = NO;
     }
     return self;
 }
@@ -52,40 +56,77 @@ const int GOAL_WIDTH = (GAME_WINDOW_WIDTH - MIDDLE_TRAP_WIDTH - (2 * SIDE_TRAPS_
     return self.y + (0.5 * BALL_SIZE);
 }
 
-// This method checks whether the ball is near one of the side walls and
-// ensures it does not go through the wall
--(void)checkForWalls {
-    float leftmostX = [self getLeftX];
+// This method checks whether the ball is against one of the side (or goal) walls. If it is, the method
+// adjusts the ball's x-coordinate value to ensure it does not go through the wall.
+-(void)adjustForWalls {
+    float leftMostX = [self getLeftX];
+    float rightMostX = [self getRightX];
     // Left wall detection
-    if (leftmostX <= WALL_WIDTH) {
+    if (leftMostX <= WALL_WIDTH) {
         self.x = WALL_WIDTH + (0.5 * BALL_SIZE);
     }
     // Right wall detection
-    else if (leftmostX + BALL_SIZE >= GAME_WINDOW_WIDTH - WALL_WIDTH) {
+    else if (leftMostX + BALL_SIZE >= GAME_WINDOW_WIDTH - WALL_WIDTH) {
         self.x = GAME_WINDOW_WIDTH - WALL_WIDTH - (0.5 * BALL_SIZE);
     }
-    // Left goal left wall
-    // Left goal right wall
-    // Right goal left wall
-    // Right goal right wall
+    else if (self.isInGoal) {
+        // Left goal left wall
+        if (leftMostX <= SIDE_TRAPS_WIDTH) {
+            self.x = SIDE_TRAPS_WIDTH + (0.5 * BALL_SIZE);
+            NSLog(@"1");
+        }
+        // Left goal right wall
+        else if (rightMostX >= SIDE_TRAPS_WIDTH + GOAL_WIDTH && rightMostX <= SIDE_TRAPS_WIDTH + GOAL_WIDTH + DELTA) {
+            self.x = SIDE_TRAPS_WIDTH + GOAL_WIDTH - (0.5 * BALL_SIZE);
+            NSLog(@"2");
+        }
+        // Right goal left wall
+        else if (leftMostX <= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH &&
+                 leftMostX >= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH - DELTA) {
+            self.x = GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH + (0.5 * BALL_SIZE);
+            NSLog(@"3");
+        }
+        // Right goal right wall
+        else if (rightMostX >= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH) {
+            self.x = GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - (0.5 * BALL_SIZE);
+            NSLog(@"4");
+        }
+    }
 }
 
--(void)checkForTraps {
+// Checks whether the ball's x-coordinate position coincides with the x-coordinate position of
+// the traps near the bottom of the game screen
+-(BOOL)isInTrapRange {
     float leftMostX = [self getLeftX];
     float rightMostX = [self getRightX];
-    float bottomY = [self getBottomY];
     
     if ( (leftMostX <= SIDE_TRAPS_WIDTH) || //Left trap
         (rightMostX >= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH) || //Right trap
-        (SIDE_TRAPS_WIDTH+GOAL_WIDTH <= leftMostX <= SIDE_TRAPS_WIDTH+GOAL_WIDTH+MIDDLE_TRAP_WIDTH)) { // Middle trap
+        (SIDE_TRAPS_WIDTH + GOAL_WIDTH <= rightMostX &&
+         leftMostX <= SIDE_TRAPS_WIDTH + GOAL_WIDTH + MIDDLE_TRAP_WIDTH) ) { // Middle trap
         
-        // Checks if the bottom of the ball is about to fall through the trap
-        if (bottomY >= GAME_WINDOW_HEIGHT - TRAPS_HEIGHT) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+    
+}
+
+// Returns a boolean indicating whether the ball has passed the trap and into the goal area. True if
+// the ball is in goal area and passed the trap, false otherwise.
+-(void)adjustForTraps {
+    // The bottom of the ball has passed the "y-threshold line" - i.e. it could have hit a trap or in goal
+    if ([self getBottomY] >= GAME_WINDOW_HEIGHT - TRAPS_HEIGHT) {
+        // Reset ball position only if the ball was not in goal in the previous game tick
+        if ([self isInTrapRange] && !self.isInGoal) {
             NSLog(@"Ball spiked!");
             [self resetBallPos];
         }
+        else {
+            self.isInGoal = YES;
+        }
     }
-    
 }
 
 -(void)checkForGoals {
@@ -93,12 +134,9 @@ const int GOAL_WIDTH = (GAME_WINDOW_WIDTH - MIDDLE_TRAP_WIDTH - (2 * SIDE_TRAPS_
     float rightMostX = [self getRightX];
     float bottomY = [self getBottomY];
     
-    if ( (SIDE_TRAPS_WIDTH < leftMostX < SIDE_TRAPS_WIDTH + GOAL_WIDTH &&
-          SIDE_TRAPS_WIDTH < rightMostX < SIDE_TRAPS_WIDTH + GOAL_WIDTH) || // Ball is in between the left goal x position
-        ((GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH < leftMostX &&
-          leftMostX < GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH) &&
-         (GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH < rightMostX &&
-          rightMostX < GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH)) ) { // Ball is in between the right goal x position
+    if ( (SIDE_TRAPS_WIDTH < leftMostX && rightMostX < SIDE_TRAPS_WIDTH + GOAL_WIDTH) || // Ball is in between the left goal x position
+        (GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH < leftMostX && rightMostX < GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH) ) {
+        // Ball is in between the right goal x position
         
         if (bottomY >= GAME_WINDOW_HEIGHT) {
             NSLog(@"Scores!");
@@ -112,10 +150,8 @@ const int GOAL_WIDTH = (GAME_WINDOW_WIDTH - MIDDLE_TRAP_WIDTH - (2 * SIDE_TRAPS_
     
     self.x = self.x + self.velocity * DT;
     self.y += DY;
-    [self checkForWalls];
-    [self checkForGoals];
-    [self checkForTraps];
-    
+    [self adjustForTraps];
+    [self adjustForWalls];
 }
 
 -(void)updateVelocity {

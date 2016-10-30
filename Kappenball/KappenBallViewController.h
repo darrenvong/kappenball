@@ -31,6 +31,10 @@
 
 @property (weak) IBOutlet UIButton* reset;
 
+// For testing only. Need to be removed later
+@property (weak) IBOutlet UIButton* flip;
+-(IBAction)flipped:(id)sender;
+
 -(void)updateView;
 -(void)updateAllScoreLabels;
 -(IBAction)sliderMoved:(id)sender;

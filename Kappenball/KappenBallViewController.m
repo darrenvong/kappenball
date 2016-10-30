@@ -23,10 +23,10 @@
     pos.y = self.ballModel.y;
     self.ball.center = pos;
     
-    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
-    NSLog(@"ball origin: (%1.1f, %1.1f)", self.ball.frame.origin.x, self.ball.frame.origin.y);
+//    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
+//    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.ballModel.RAND);
 //    NSLog(@"Ball velocity: %f, acceleration: %f", self.ballModel.velocity, self.ballModel.acceleration);
-    NSLog(@"random factor: %f, RAND: %d", self.ballModel.randFactor, self.ballModel.RAND);
+//    NSLog(@"random factor: %f, RAND: %d", self.ballModel.randFactor, self.ballModel.RAND);
 }
 
 -(IBAction)sliderMoved:(id)sender {
@@ -69,11 +69,17 @@
     self.randFactor.value = self.ballModel.randFactor;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateView) userInfo:nil repeats:YES];
+    NSLog(@"RAND: %d", self.ballModel.RAND);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)flipped:(id)sender {
+    self.ballModel.RAND = -self.ballModel.RAND;
+    NSLog(@"RAND: %d", self.ballModel.RAND);
 }
 
 @end

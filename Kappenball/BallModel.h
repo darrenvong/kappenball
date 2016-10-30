@@ -16,6 +16,8 @@
 @property (assign) float x;
 @property (assign) float y;
 
+@property (assign) BOOL isInGoal;
+
 @property (assign) float velocity;
 @property (assign) float acceleration;
 @property (assign) float randFactor;
@@ -25,8 +27,9 @@
 -(float)getRightX;
 -(float)getBottomY;
 
--(void)checkForWalls;
--(void)checkForTraps;
+-(void)adjustForWalls;
+-(BOOL)isInTrapRange;
+-(void)adjustForTraps;
 -(void)checkForGoals;
 
 -(void)updateBallPos;

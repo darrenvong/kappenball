@@ -53,6 +53,14 @@
                                 <rect key="frame" x="63" y="40" width="611" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t4E-ib-pOg">
+                                <rect key="frame" x="28" y="375" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Flip RAND"/>
+                                <connections>
+                                    <action selector="flipped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2B-Fs-XYR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -62,6 +70,7 @@
                         <outlet property="average" destination="1Kw-Dq-JQo" id="qEz-HE-WD4"/>
                         <outlet property="background" destination="vAe-yy-Ecr" id="4Oz-Fb-NmY"/>
                         <outlet property="energy" destination="qPw-kD-jVG" id="45t-rM-c3k"/>
+                        <outlet property="flip" destination="t4E-ib-pOg" id="Yfq-iY-x2S"/>
                         <outlet property="randFactor" destination="TK8-4q-P9U" id="acR-pL-evt"/>
                         <outlet property="reset" destination="W6D-7M-3zk" id="sbx-32-slY"/>
                         <outlet property="score" destination="Dwh-en-zed" id="vrh-bh-mnK"/>
