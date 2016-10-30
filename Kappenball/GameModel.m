@@ -141,6 +141,7 @@ const float DELTA = BALL_SIZE / 2.0;
 -(void)adjustForGoals {
     if (self.isInGoal && [self getBottomY] >= GAME_WINDOW_HEIGHT) {
         NSLog(@"Point scored!");
+        self.average = (self.score * self.average + self.energy) / (self.score + 1);
         self.score += 1;
         self.energy = 0;
         [self resetBallState];
