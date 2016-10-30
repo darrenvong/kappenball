@@ -38,6 +38,7 @@
 
 -(void)updateGameState;
 -(void)updateVelocity;
+-(void)updateAcceleration:(BOOL)p;
 
 -(void)resetBallState;
 

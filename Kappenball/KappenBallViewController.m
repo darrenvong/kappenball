@@ -27,7 +27,7 @@
     
 //    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
 //    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.gameModel.ball.RAND);
-//    NSLog(@"Ball velocity: %f, acceleration: %f", self.gameModel.ball.velocity, self.gameModel.ball.acceleration);
+    NSLog(@"velocity: %f, acceleration: %f, rand product: %f", self.gameModel.velocity, self.gameModel.acceleration, self.gameModel.randFactor * self.gameModel.RAND);
 //    NSLog(@"random factor: %f, RAND: %d", self.gameModel.ball.randFactor, self.gameModel.ball.RAND);
 }
 
@@ -72,6 +72,35 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateView) userInfo:nil repeats:YES];
     NSLog(@"RAND: %d", self.gameModel.RAND);
 }
+
+//-(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{
+//}
+//
+//-(void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event{
+//}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent*)event {
+//    NSSet<UITouch *> *taps = [event touchesForView:self.background];
+    for (UITouch* tap in touches) {
+        
+        CGPoint tapLocation = [tap locationInView:self.background];
+        NSLog(@"Tapped location: (%.1f, %.1f)", tapLocation.x, tapLocation.y);
+        if (tapLocation.x <= self.gameModel.ballXPos) { // Tap is to the left of the ball
+            [self.gameModel updateAcceleration:YES];
+            self.gameModel.energy += 1;
+        }
+        else {
+            [self.gameModel updateAcceleration:NO];
+            self.gameModel.energy += 1;
+        }
+        
+    }
+    
+}
+
+//-(void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event {
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

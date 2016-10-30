@@ -162,9 +162,20 @@ const float DELTA = BALL_SIZE / 2.0;
     self.velocity = self.velocity*DECAY + self.acceleration + self.randFactor * self.RAND;
 }
 
+-(void)updateAcceleration:(BOOL)positive {
+    if (positive) { // User tapped to the left of the ball
+        self.acceleration += 1.2;
+    }
+    else { // User tapped to the right of the ball
+        self.acceleration -= 1.2;
+    }
+}
+
 -(void)resetBallState {
     self.ballXPos = GAME_WINDOW_WIDTH / 2.0;
     self.ballYPos = 0.0;
+    self.acceleration = 0.0;
+    self.RAND = (arc4random() % 41) - 20; // Update this after every attempt to really make it random
     self.isInGoal = NO;
 }
 
