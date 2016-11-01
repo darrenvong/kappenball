@@ -107,14 +107,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-// REMEMBER TO REMOVE THESE....!!!!!!!!!
--(IBAction)flipped:(id)sender {
-    self.gameModel.RAND = -self.gameModel.RAND;
-    NSLog(@"RAND: %d", self.gameModel.RAND);
-}
-
--(IBAction)boosted:(id)sender {
-    self.gameModel.energy += 1;
-}
-
 @end

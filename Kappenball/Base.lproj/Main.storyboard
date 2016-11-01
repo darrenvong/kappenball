@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -46,22 +46,6 @@
                                 <rect key="frame" x="63" y="40" width="611" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t4E-ib-pOg">
-                                <rect key="frame" x="20" y="375" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RAND"/>
-                                <connections>
-                                    <action selector="flipped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2B-Fs-XYR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KgF-Ho-jk8">
-                                <rect key="frame" x="72" y="375" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Energy"/>
-                                <connections>
-                                    <action selector="boosted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PjV-vJ-OtV"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dwh-en-zed">
                                 <rect key="frame" x="90" y="8" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,8 +62,6 @@
                         <outlet property="average" destination="1Kw-Dq-JQo" id="qEz-HE-WD4"/>
                         <outlet property="background" destination="vAe-yy-Ecr" id="4Oz-Fb-NmY"/>
                         <outlet property="energy" destination="qPw-kD-jVG" id="45t-rM-c3k"/>
-                        <outlet property="energyBoost" destination="KgF-Ho-jk8" id="6UI-6g-SoL"/>
-                        <outlet property="flip" destination="t4E-ib-pOg" id="Yfq-iY-x2S"/>
                         <outlet property="randFactor" destination="TK8-4q-P9U" id="acR-pL-evt"/>
                         <outlet property="reset" destination="W6D-7M-3zk" id="sbx-32-slY"/>
                         <outlet property="score" destination="Dwh-en-zed" id="vrh-bh-mnK"/>

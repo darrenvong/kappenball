@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20AB54A61DC8B7700092A871 /* slider1.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AB54A51DC8B7700092A871 /* slider1.png */; };
+		20AB54A91DC8B7890092A871 /* slider2.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AB54A71DC8B7890092A871 /* slider2.png */; };
+		20AB54AA1DC8B7890092A871 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AB54A81DC8B7890092A871 /* thumb.png */; };
 		9518B0671DC4CBCD0069BF5F /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9518B0661DC4CBCD0069BF5F /* GameModel.m */; };
 		953FA9211DC00E07009EE892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9201DC00E07009EE892 /* main.m */; };
 		953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20AB54A51DC8B7700092A871 /* slider1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider1.png; sourceTree = "<group>"; };
+		20AB54A71DC8B7890092A871 /* slider2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider2.png; sourceTree = "<group>"; };
+		20AB54A81DC8B7890092A871 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		9518B0651DC4CBCD0069BF5F /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		9518B0661DC4CBCD0069BF5F /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 		953FA91C1DC00E07009EE892 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,9 @@
 				953FA9571DC0109F009EE892 /* field.png */,
 				953FA9551DC01090009EE892 /* ball.png */,
 				953FA9201DC00E07009EE892 /* main.m */,
+				20AB54A51DC8B7700092A871 /* slider1.png */,
+				20AB54A71DC8B7890092A871 /* slider2.png */,
+				20AB54A81DC8B7890092A871 /* thumb.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,6 +267,9 @@
 				953FA9581DC0109F009EE892 /* field.png in Resources */,
 				953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */,
 				953FA9561DC01090009EE892 /* ball.png in Resources */,
+				20AB54AA1DC8B7890092A871 /* thumb.png in Resources */,
+				20AB54A91DC8B7890092A871 /* slider2.png in Resources */,
+				20AB54A61DC8B7700092A871 /* slider1.png in Resources */,
 				953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
