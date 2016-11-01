@@ -65,6 +65,14 @@
     pos.x = self.gameModel.ballXPos;
     self.ball.center = pos;
     
+    // Customise the look and feel of the slider
+    [self.randFactor setThumbImage:[UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    [self.randFactor setMinimumTrackImage:[[UIImage imageNamed:@"slider2.png"]
+                                           resizableImageWithCapInsets:UIEdgeInsetsZero
+                                           resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
+    [self.randFactor setMaximumTrackImage:[[UIImage imageNamed:@"slider1.png"]
+                                           resizableImageWithCapInsets:UIEdgeInsetsZero
+                                           resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     
     // initialise slider's randomness factor to 0 to begin with
     self.randFactor.value = self.gameModel.randFactor;
