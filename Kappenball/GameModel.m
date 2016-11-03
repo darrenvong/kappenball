@@ -25,6 +25,14 @@ const int GOAL_WIDTH = (GAME_WINDOW_WIDTH - MIDDLE_TRAP_WIDTH - (2 * SIDE_TRAPS_
 // Used to provide upper/lower bounds to check if the ball is in the left goal or the right goal
 const float DELTA = BALL_SIZE / 2.0;
 
+// Put helper methods that won't be called publicly here to de-clutter the header file
+@interface GameModel ()
+
+-(BOOL)isInTrapRange;
+-(void)updateVelocity;
+
+@end
+
 @implementation GameModel
 
 -(id)init {
@@ -159,6 +167,7 @@ const float DELTA = BALL_SIZE / 2.0;
 }
 
 -(void)updateVelocity {
+    self.RAND = (arc4random() % 41) - 20;
     self.velocity = self.velocity*DECAY + self.acceleration + self.randFactor * self.RAND;
 }
 
@@ -175,7 +184,6 @@ const float DELTA = BALL_SIZE / 2.0;
     self.ballXPos = GAME_WINDOW_WIDTH / 2.0;
     self.ballYPos = 0.0;
     self.acceleration = 0.0;
-    self.RAND = (arc4random() % 41) - 20; // Update this after every attempt to really make it random
     self.isInGoal = NO;
 }
 

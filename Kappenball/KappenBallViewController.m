@@ -67,11 +67,13 @@
     
     // Customise the look and feel of the slider
     [self.randFactor setThumbImage:[UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    UIEdgeInsets minTrackImgInsets = UIEdgeInsetsMake(2, 2, 2, 0);
+    UIEdgeInsets maxTrackImgInsets = UIEdgeInsetsMake(2, 0, 2, 2);
     [self.randFactor setMinimumTrackImage:[[UIImage imageNamed:@"slider2.png"]
-                                           resizableImageWithCapInsets:UIEdgeInsetsZero
+                                           resizableImageWithCapInsets:minTrackImgInsets
                                            resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.randFactor setMaximumTrackImage:[[UIImage imageNamed:@"slider1.png"]
-                                           resizableImageWithCapInsets:UIEdgeInsetsZero
+                                           resizableImageWithCapInsets:maxTrackImgInsets
                                            resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     
     // initialise slider's randomness factor to 0 to begin with

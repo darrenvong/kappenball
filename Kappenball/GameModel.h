@@ -32,16 +32,14 @@
 -(float)getBottomY;
 
 -(void)adjustForWalls;
--(BOOL)isInTrapRange;
 -(void)adjustForTraps;
 -(void)adjustForGoals;
 
 -(void)updateGameState;
--(void)updateVelocity;
+
 -(void)updateAcceleration:(BOOL)p;
 
 -(void)resetBallState;
-
 -(void)resetScores;
 
 @end
