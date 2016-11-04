@@ -8,6 +8,13 @@
 
 #import "KappenBallViewController.h"
 
+@interface KappenBallViewController ()
+
+-(void)setUpTimers;
+-(void)pauseTimers;
+
+@end
+
 @implementation KappenBallViewController
 
 -(void)updateAllScoreLabels {
@@ -27,7 +34,7 @@
     
 //    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
 //    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.gameModel.ball.RAND);
-    NSLog(@"velocity: %f, acceleration: %f, rand product: %f", self.gameModel.velocity, self.gameModel.acceleration, self.gameModel.randFactor * self.gameModel.RAND);
+    NSLog(@"max velocity: %f", self.gameModel.absMaxVelocity);
 //    NSLog(@"random factor: %f, RAND: %d", self.gameModel.ball.randFactor, self.gameModel.ball.RAND);
 }
 
@@ -40,6 +47,31 @@
     // Reset the label score when reset button is pressed
     [self.gameModel resetScores];
     [self updateAllScoreLabels];
+}
+
+-(IBAction)pauseButtonPressed:(id)sender {
+    if (self.gameModel.isGamePaused) {
+        self.gameModel.isGamePaused = NO;
+        self.pausedLabel.alpha = 0.0;
+        [self setUpTimers];
+        [self.pause setTitle:@"Pause" forState:UIControlStateNormal];
+    }
+    else {
+        self.gameModel.isGamePaused = YES;
+        [self pauseTimers];
+        self.pausedLabel.alpha = 1.0;
+        [self.pause setTitle:@"Resume" forState:UIControlStateNormal];
+    }
+}
+
+// Sets up the method with NSTimer so that the ball and RAND is updated periodically
+-(void)setUpTimers {
+    self.ballTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateView) userInfo:nil repeats:YES];
+}
+
+// Invalidate timers which updates the ball and RAND when the user wishes to pause the game (by pressing the 'pause' button)
+-(void)pauseTimers {
+    [self.ballTimer invalidate];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -60,27 +92,28 @@
     self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
     [self.background addSubview:self.ball];
     
-    //Set the ball's initial x coordinate
+    // Set the ball's initial x coordinate
     CGPoint pos = self.ball.center;
     pos.x = self.gameModel.ballXPos;
     self.ball.center = pos;
     
     // Customise the look and feel of the slider
     [self.randFactor setThumbImage:[UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    // Define insets used to ensure only the central filled part of the image is stretched to fill the slider
     UIEdgeInsets minTrackImgInsets = UIEdgeInsetsMake(2, 2, 2, 0);
     UIEdgeInsets maxTrackImgInsets = UIEdgeInsetsMake(2, 0, 2, 2);
-    [self.randFactor setMinimumTrackImage:[[UIImage imageNamed:@"slider2.png"]
-                                           resizableImageWithCapInsets:minTrackImgInsets
-                                           resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
-    [self.randFactor setMaximumTrackImage:[[UIImage imageNamed:@"slider1.png"]
-                                           resizableImageWithCapInsets:maxTrackImgInsets
-                                           resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
+    
+    UIImage* minTrackImage = [[UIImage imageNamed:@"slider2.png"] resizableImageWithCapInsets:minTrackImgInsets
+                                                                                 resizingMode:UIImageResizingModeStretch];
+    UIImage* maxTrackImage = [[UIImage imageNamed:@"slider1.png"] resizableImageWithCapInsets:maxTrackImgInsets
+                                                                                 resizingMode:UIImageResizingModeStretch];
+    [self.randFactor setMinimumTrackImage:minTrackImage forState:UIControlStateNormal];
+    [self.randFactor setMaximumTrackImage:maxTrackImage forState:UIControlStateNormal];
     
     // initialise slider's randomness factor to 0 to begin with
     self.randFactor.value = self.gameModel.randFactor;
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateView) userInfo:nil repeats:YES];
-    NSLog(@"RAND: %d", self.gameModel.RAND);
+    [self setUpTimers];
 }
 
 //-(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{

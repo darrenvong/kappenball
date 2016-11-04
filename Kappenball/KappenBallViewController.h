@@ -15,7 +15,7 @@
 @property (strong) GameModel* gameModel;
 
 //Timer for animating the position of the ball
-@property (strong) NSTimer* timer;
+@property (strong) NSTimer* ballTimer;
 
 @property (weak) IBOutlet UIImageView* background;
 @property (strong) UIImageView* ball;
@@ -24,6 +24,9 @@
 @property (weak) IBOutlet UILabel* score;
 @property (weak) IBOutlet UILabel* average;
 @property (weak) IBOutlet UILabel* energy;
+
+@property (weak) IBOutlet UILabel* pausedLabel;
+@property (weak) IBOutlet UIButton* pause;
 
 // Slider to control randomness factor
 @property (weak) IBOutlet UISlider* randFactor;
@@ -34,6 +37,7 @@
 -(void)updateAllScoreLabels;
 -(IBAction)sliderMoved:(id)sender;
 -(IBAction)resetButtonPressed:(id)sender;
+-(IBAction)pauseButtonPressed:(id)sender;
 
 @end
 

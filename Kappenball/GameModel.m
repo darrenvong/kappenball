@@ -30,6 +30,7 @@ const float DELTA = BALL_SIZE / 2.0;
 
 -(BOOL)isInTrapRange;
 -(void)updateVelocity;
+-(void)updateScore;
 
 @end
 
@@ -42,12 +43,14 @@ const float DELTA = BALL_SIZE / 2.0;
         _acceleration = 0.0;
         _randFactor = 0.0;
         _RAND = (arc4random() % 41) - 20;
+        _absMaxVelocity = 20.0;
         _ballXPos = GAME_WINDOW_WIDTH / 2.0;
         _ballYPos = 0.0;
         _score = 0;
         _average = 0.0;
         _energy = 0;
         _isInGoal = NO;
+        _isGamePaused = NO;
     }
     return self;
 }
@@ -138,7 +141,6 @@ const float DELTA = BALL_SIZE / 2.0;
             [self resetBallState];
         }
         else {
-            NSLog(@"Ball now in goal!");
             self.isInGoal = YES;
         }
     }
@@ -149,9 +151,7 @@ const float DELTA = BALL_SIZE / 2.0;
 -(void)adjustForGoals {
     if (self.isInGoal && [self getBottomY] >= GAME_WINDOW_HEIGHT) {
         NSLog(@"Point scored!");
-        self.average = (self.score * self.average + self.energy) / (self.score + 1);
-        self.score += 1;
-        self.energy = 0;
+        [self updateScore];
         [self resetBallState];
     }
 }
@@ -168,15 +168,37 @@ const float DELTA = BALL_SIZE / 2.0;
 
 -(void)updateVelocity {
     self.RAND = (arc4random() % 41) - 20;
-    self.velocity = self.velocity*DECAY + self.acceleration + self.randFactor * self.RAND;
+    float potentialNewVelocity = self.velocity*DECAY + self.acceleration + self.randFactor * self.RAND;
+    // Restricting the potential velocity to an upper limit to make the game more playable to begin with.
+    // Also provides a basis for altering the difficulty of the game later on.
+    if (potentialNewVelocity > self.absMaxVelocity) {
+        self.velocity = self.absMaxVelocity;
+        
+    }
+    else if (potentialNewVelocity < -self.absMaxVelocity) {
+        self.velocity = -self.absMaxVelocity;
+    }
+    else {
+        self.velocity = potentialNewVelocity;
+    }
 }
 
 -(void)updateAcceleration:(BOOL)positive {
     if (positive) { // User tapped to the left of the ball
-        self.acceleration += 1.2;
+        self.acceleration = (self.acceleration > 0)? self.acceleration + 1.2 : 1.2;
     }
     else { // User tapped to the right of the ball
-        self.acceleration -= 1.2;
+        self.acceleration = (self.acceleration < 0)? self.acceleration - 1.2 : -1.2;
+    }
+}
+
+-(void)updateScore {
+    self.average = (self.score * self.average + self.energy) / (self.score + 1);
+    self.score += 1;
+    self.energy = 0;
+    // Increases the maximum velocity after every five points scored by player
+    if (self.score % 5 == 0) {
+        self.absMaxVelocity *= 1.25;
     }
 }
 

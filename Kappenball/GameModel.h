@@ -21,10 +21,13 @@
 @property (assign) float velocity;
 @property (assign) float acceleration;
 @property (assign) float randFactor;
+@property (assign) float absMaxVelocity;
 
 @property (assign) int score;
 @property (assign) float average;
 @property (assign) int energy;
+
+@property (assign) BOOL isGamePaused;
 
 // Convenient coordinate conversion helpers from the center of the ball to the different position of the ball
 -(float)getLeftX;
@@ -36,7 +39,6 @@
 -(void)adjustForGoals;
 
 -(void)updateGameState;
-
 -(void)updateAcceleration:(BOOL)p;
 
 -(void)resetBallState;
