@@ -7,83 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20AB54A61DC8B7700092A871 /* slider1.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AB54A51DC8B7700092A871 /* slider1.png */; };
-		20AB54A91DC8B7890092A871 /* slider2.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AB54A71DC8B7890092A871 /* slider2.png */; };
-		20AB54AA1DC8B7890092A871 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AB54A81DC8B7890092A871 /* thumb.png */; };
-		9518B0671DC4CBCD0069BF5F /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9518B0661DC4CBCD0069BF5F /* GameModel.m */; };
-		953FA9211DC00E07009EE892 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9201DC00E07009EE892 /* main.m */; };
-		953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */; };
-		953FA9271DC00E07009EE892 /* KappenBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9261DC00E07009EE892 /* KappenBallViewController.m */; };
-		953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9281DC00E07009EE892 /* Main.storyboard */; };
-		953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953FA92B1DC00E07009EE892 /* Assets.xcassets */; };
-		953FA92F1DC00E07009EE892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */; };
-		953FA93A1DC00E07009EE892 /* KappenballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9391DC00E07009EE892 /* KappenballTests.m */; };
-		953FA9451DC00E07009EE892 /* KappenballUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9441DC00E07009EE892 /* KappenballUITests.m */; };
-		953FA9561DC01090009EE892 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9551DC01090009EE892 /* ball.png */; };
-		953FA9581DC0109F009EE892 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9571DC0109F009EE892 /* field.png */; };
-		956721291DCD6A23009BB82E /* kappenblob.png in Resources */ = {isa = PBXBuildFile; fileRef = 956721281DCD6A23009BB82E /* kappenblob.png */; };
+		9538B87C1DCE62EB007F6996 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B87B1DCE62EB007F6996 /* main.m */; };
+		9538B87F1DCE62EB007F6996 /* KappenballAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B87E1DCE62EB007F6996 /* KappenballAppDelegate.m */; };
+		9538B8821DCE62EB007F6996 /* KappenballViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8811DCE62EB007F6996 /* KappenballViewController.m */; };
+		9538B8851DCE62EB007F6996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8831DCE62EB007F6996 /* Main.storyboard */; };
+		9538B8871DCE62EC007F6996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8861DCE62EC007F6996 /* Assets.xcassets */; };
+		9538B88A1DCE62EC007F6996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8881DCE62EC007F6996 /* LaunchScreen.storyboard */; };
+		9538B8931DCE63B1007F6996 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8921DCE63B1007F6996 /* GameModel.m */; };
+		9538B8991DCE64C6007F6996 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8941DCE64C6007F6996 /* ball.png */; };
+		9538B89A1DCE64C6007F6996 /* kappenblob.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8951DCE64C6007F6996 /* kappenblob.png */; };
+		9538B89B1DCE64C6007F6996 /* slider1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8961DCE64C6007F6996 /* slider1.png */; };
+		9538B89C1DCE64C6007F6996 /* slider2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8971DCE64C6007F6996 /* slider2.png */; };
+		9538B89D1DCE64C6007F6996 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8981DCE64C6007F6996 /* thumb.png */; };
+		9538B89F1DCE6536007F6996 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B89E1DCE6536007F6996 /* field.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		953FA9361DC00E07009EE892 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 953FA9141DC00E07009EE892 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 953FA91B1DC00E07009EE892;
-			remoteInfo = Kappenball;
-		};
-		953FA9411DC00E07009EE892 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 953FA9141DC00E07009EE892 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 953FA91B1DC00E07009EE892;
-			remoteInfo = Kappenball;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		20AB54A51DC8B7700092A871 /* slider1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider1.png; sourceTree = "<group>"; };
-		20AB54A71DC8B7890092A871 /* slider2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider2.png; sourceTree = "<group>"; };
-		20AB54A81DC8B7890092A871 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
-		9518B0651DC4CBCD0069BF5F /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
-		9518B0661DC4CBCD0069BF5F /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
-		953FA91C1DC00E07009EE892 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		953FA9201DC00E07009EE892 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		953FA9221DC00E07009EE892 /* KappenBallAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenBallAppDelegate.h; sourceTree = "<group>"; };
-		953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenBallAppDelegate.m; sourceTree = "<group>"; };
-		953FA9251DC00E07009EE892 /* KappenBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenBallViewController.h; sourceTree = "<group>"; };
-		953FA9261DC00E07009EE892 /* KappenBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenBallViewController.m; sourceTree = "<group>"; };
-		953FA9291DC00E07009EE892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		953FA92B1DC00E07009EE892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		953FA92E1DC00E07009EE892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		953FA9301DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953FA9351DC00E07009EE892 /* KappenballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KappenballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		953FA9391DC00E07009EE892 /* KappenballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballTests.m; sourceTree = "<group>"; };
-		953FA93B1DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953FA9401DC00E07009EE892 /* KappenballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KappenballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		953FA9441DC00E07009EE892 /* KappenballUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballUITests.m; sourceTree = "<group>"; };
-		953FA9461DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953FA9551DC01090009EE892 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
-		953FA9571DC0109F009EE892 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
-		956721281DCD6A23009BB82E /* kappenblob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kappenblob.png; sourceTree = "<group>"; };
+		9538B8771DCE62EB007F6996 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9538B87B1DCE62EB007F6996 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9538B87D1DCE62EB007F6996 /* KappenballAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenballAppDelegate.h; sourceTree = "<group>"; };
+		9538B87E1DCE62EB007F6996 /* KappenballAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballAppDelegate.m; sourceTree = "<group>"; };
+		9538B8801DCE62EB007F6996 /* KappenballViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenballViewController.h; sourceTree = "<group>"; };
+		9538B8811DCE62EB007F6996 /* KappenballViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KappenballViewController.m; sourceTree = "<group>"; };
+		9538B8841DCE62EB007F6996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9538B8861DCE62EC007F6996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9538B8891DCE62EC007F6996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9538B88B1DCE62EC007F6996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9538B8911DCE63B1007F6996 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		9538B8921DCE63B1007F6996 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		9538B8941DCE64C6007F6996 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		9538B8951DCE64C6007F6996 /* kappenblob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kappenblob.png; sourceTree = "<group>"; };
+		9538B8961DCE64C6007F6996 /* slider1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider1.png; sourceTree = "<group>"; };
+		9538B8971DCE64C6007F6996 /* slider2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider2.png; sourceTree = "<group>"; };
+		9538B8981DCE64C6007F6996 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
+		9538B89E1DCE6536007F6996 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		953FA9191DC00E07009EE892 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		953FA9321DC00E07009EE892 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		953FA93D1DC00E07009EE892 /* Frameworks */ = {
+		9538B8741DCE62EB007F6996 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,86 +54,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		953FA9131DC00E07009EE892 = {
+		9538B86E1DCE62EB007F6996 = {
 			isa = PBXGroup;
 			children = (
-				953FA91E1DC00E07009EE892 /* Kappenball */,
-				953FA9381DC00E07009EE892 /* KappenballTests */,
-				953FA9431DC00E07009EE892 /* KappenballUITests */,
-				953FA91D1DC00E07009EE892 /* Products */,
+				9538B8791DCE62EB007F6996 /* Kappenball */,
+				9538B8781DCE62EB007F6996 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		953FA91D1DC00E07009EE892 /* Products */ = {
+		9538B8781DCE62EB007F6996 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				953FA91C1DC00E07009EE892 /* Kappenball.app */,
-				953FA9351DC00E07009EE892 /* KappenballTests.xctest */,
-				953FA9401DC00E07009EE892 /* KappenballUITests.xctest */,
+				9538B8771DCE62EB007F6996 /* Kappenball.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		953FA91E1DC00E07009EE892 /* Kappenball */ = {
+		9538B8791DCE62EB007F6996 /* Kappenball */ = {
 			isa = PBXGroup;
 			children = (
-				953FA9221DC00E07009EE892 /* KappenBallAppDelegate.h */,
-				953FA9231DC00E07009EE892 /* KappenBallAppDelegate.m */,
-				953FA9251DC00E07009EE892 /* KappenBallViewController.h */,
-				953FA9261DC00E07009EE892 /* KappenBallViewController.m */,
-				9518B0651DC4CBCD0069BF5F /* GameModel.h */,
-				9518B0661DC4CBCD0069BF5F /* GameModel.m */,
-				953FA9281DC00E07009EE892 /* Main.storyboard */,
-				953FA92B1DC00E07009EE892 /* Assets.xcassets */,
-				953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */,
-				953FA9301DC00E07009EE892 /* Info.plist */,
-				953FA91F1DC00E07009EE892 /* Supporting Files */,
+				9538B87D1DCE62EB007F6996 /* KappenballAppDelegate.h */,
+				9538B8911DCE63B1007F6996 /* GameModel.h */,
+				9538B8921DCE63B1007F6996 /* GameModel.m */,
+				9538B87E1DCE62EB007F6996 /* KappenballAppDelegate.m */,
+				9538B8801DCE62EB007F6996 /* KappenballViewController.h */,
+				9538B8811DCE62EB007F6996 /* KappenballViewController.m */,
+				9538B8831DCE62EB007F6996 /* Main.storyboard */,
+				9538B8861DCE62EC007F6996 /* Assets.xcassets */,
+				9538B8881DCE62EC007F6996 /* LaunchScreen.storyboard */,
+				9538B88B1DCE62EC007F6996 /* Info.plist */,
+				9538B87A1DCE62EB007F6996 /* Supporting Files */,
 			);
 			path = Kappenball;
 			sourceTree = "<group>";
 		};
-		953FA91F1DC00E07009EE892 /* Supporting Files */ = {
+		9538B87A1DCE62EB007F6996 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				956721281DCD6A23009BB82E /* kappenblob.png */,
-				953FA9571DC0109F009EE892 /* field.png */,
-				953FA9551DC01090009EE892 /* ball.png */,
-				953FA9201DC00E07009EE892 /* main.m */,
-				20AB54A51DC8B7700092A871 /* slider1.png */,
-				20AB54A71DC8B7890092A871 /* slider2.png */,
-				20AB54A81DC8B7890092A871 /* thumb.png */,
+				9538B89E1DCE6536007F6996 /* field.png */,
+				9538B8941DCE64C6007F6996 /* ball.png */,
+				9538B8951DCE64C6007F6996 /* kappenblob.png */,
+				9538B8961DCE64C6007F6996 /* slider1.png */,
+				9538B8971DCE64C6007F6996 /* slider2.png */,
+				9538B8981DCE64C6007F6996 /* thumb.png */,
+				9538B87B1DCE62EB007F6996 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		953FA9381DC00E07009EE892 /* KappenballTests */ = {
-			isa = PBXGroup;
-			children = (
-				953FA9391DC00E07009EE892 /* KappenballTests.m */,
-				953FA93B1DC00E07009EE892 /* Info.plist */,
-			);
-			path = KappenballTests;
-			sourceTree = "<group>";
-		};
-		953FA9431DC00E07009EE892 /* KappenballUITests */ = {
-			isa = PBXGroup;
-			children = (
-				953FA9441DC00E07009EE892 /* KappenballUITests.m */,
-				953FA9461DC00E07009EE892 /* Info.plist */,
-			);
-			path = KappenballUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		953FA91B1DC00E07009EE892 /* Kappenball */ = {
+		9538B8761DCE62EB007F6996 /* Kappenball */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 953FA9491DC00E07009EE892 /* Build configuration list for PBXNativeTarget "Kappenball" */;
+			buildConfigurationList = 9538B88E1DCE62EC007F6996 /* Build configuration list for PBXNativeTarget "Kappenball" */;
 			buildPhases = (
-				953FA9181DC00E07009EE892 /* Sources */,
-				953FA9191DC00E07009EE892 /* Frameworks */,
-				953FA91A1DC00E07009EE892 /* Resources */,
+				9538B8731DCE62EB007F6996 /* Sources */,
+				9538B8741DCE62EB007F6996 /* Frameworks */,
+				9538B8751DCE62EB007F6996 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -180,68 +119,24 @@
 			);
 			name = Kappenball;
 			productName = Kappenball;
-			productReference = 953FA91C1DC00E07009EE892 /* Kappenball.app */;
+			productReference = 9538B8771DCE62EB007F6996 /* Kappenball.app */;
 			productType = "com.apple.product-type.application";
-		};
-		953FA9341DC00E07009EE892 /* KappenballTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 953FA94C1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballTests" */;
-			buildPhases = (
-				953FA9311DC00E07009EE892 /* Sources */,
-				953FA9321DC00E07009EE892 /* Frameworks */,
-				953FA9331DC00E07009EE892 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				953FA9371DC00E07009EE892 /* PBXTargetDependency */,
-			);
-			name = KappenballTests;
-			productName = KappenballTests;
-			productReference = 953FA9351DC00E07009EE892 /* KappenballTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		953FA93F1DC00E07009EE892 /* KappenballUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 953FA94F1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballUITests" */;
-			buildPhases = (
-				953FA93C1DC00E07009EE892 /* Sources */,
-				953FA93D1DC00E07009EE892 /* Frameworks */,
-				953FA93E1DC00E07009EE892 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				953FA9421DC00E07009EE892 /* PBXTargetDependency */,
-			);
-			name = KappenballUITests;
-			productName = KappenballUITests;
-			productReference = 953FA9401DC00E07009EE892 /* KappenballUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		953FA9141DC00E07009EE892 /* Project object */ = {
+		9538B86F1DCE62EB007F6996 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Darren Vong";
 				TargetAttributes = {
-					953FA91B1DC00E07009EE892 = {
+					9538B8761DCE62EB007F6996 = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					953FA9341DC00E07009EE892 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 953FA91B1DC00E07009EE892;
-					};
-					953FA93F1DC00E07009EE892 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 953FA91B1DC00E07009EE892;
 					};
 				};
 			};
-			buildConfigurationList = 953FA9171DC00E07009EE892 /* Build configuration list for PBXProject "Kappenball" */;
+			buildConfigurationList = 9538B8721DCE62EB007F6996 /* Build configuration list for PBXProject "Kappenball" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -249,107 +144,62 @@
 				en,
 				Base,
 			);
-			mainGroup = 953FA9131DC00E07009EE892;
-			productRefGroup = 953FA91D1DC00E07009EE892 /* Products */;
+			mainGroup = 9538B86E1DCE62EB007F6996;
+			productRefGroup = 9538B8781DCE62EB007F6996 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				953FA91B1DC00E07009EE892 /* Kappenball */,
-				953FA9341DC00E07009EE892 /* KappenballTests */,
-				953FA93F1DC00E07009EE892 /* KappenballUITests */,
+				9538B8761DCE62EB007F6996 /* Kappenball */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		953FA91A1DC00E07009EE892 /* Resources */ = {
+		9538B8751DCE62EB007F6996 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953FA92F1DC00E07009EE892 /* LaunchScreen.storyboard in Resources */,
-				953FA9581DC0109F009EE892 /* field.png in Resources */,
-				953FA92C1DC00E07009EE892 /* Assets.xcassets in Resources */,
-				953FA9561DC01090009EE892 /* ball.png in Resources */,
-				20AB54AA1DC8B7890092A871 /* thumb.png in Resources */,
-				20AB54A91DC8B7890092A871 /* slider2.png in Resources */,
-				20AB54A61DC8B7700092A871 /* slider1.png in Resources */,
-				953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */,
-				956721291DCD6A23009BB82E /* kappenblob.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		953FA9331DC00E07009EE892 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		953FA93E1DC00E07009EE892 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9538B88A1DCE62EC007F6996 /* LaunchScreen.storyboard in Resources */,
+				9538B8871DCE62EC007F6996 /* Assets.xcassets in Resources */,
+				9538B89A1DCE64C6007F6996 /* kappenblob.png in Resources */,
+				9538B89F1DCE6536007F6996 /* field.png in Resources */,
+				9538B8991DCE64C6007F6996 /* ball.png in Resources */,
+				9538B89D1DCE64C6007F6996 /* thumb.png in Resources */,
+				9538B89C1DCE64C6007F6996 /* slider2.png in Resources */,
+				9538B89B1DCE64C6007F6996 /* slider1.png in Resources */,
+				9538B8851DCE62EB007F6996 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		953FA9181DC00E07009EE892 /* Sources */ = {
+		9538B8731DCE62EB007F6996 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953FA9271DC00E07009EE892 /* KappenBallViewController.m in Sources */,
-				953FA9241DC00E07009EE892 /* KappenBallAppDelegate.m in Sources */,
-				953FA9211DC00E07009EE892 /* main.m in Sources */,
-				9518B0671DC4CBCD0069BF5F /* GameModel.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		953FA9311DC00E07009EE892 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				953FA93A1DC00E07009EE892 /* KappenballTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		953FA93C1DC00E07009EE892 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				953FA9451DC00E07009EE892 /* KappenballUITests.m in Sources */,
+				9538B8821DCE62EB007F6996 /* KappenballViewController.m in Sources */,
+				9538B8931DCE63B1007F6996 /* GameModel.m in Sources */,
+				9538B87F1DCE62EB007F6996 /* KappenballAppDelegate.m in Sources */,
+				9538B87C1DCE62EB007F6996 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		953FA9371DC00E07009EE892 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 953FA91B1DC00E07009EE892 /* Kappenball */;
-			targetProxy = 953FA9361DC00E07009EE892 /* PBXContainerItemProxy */;
-		};
-		953FA9421DC00E07009EE892 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 953FA91B1DC00E07009EE892 /* Kappenball */;
-			targetProxy = 953FA9411DC00E07009EE892 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		953FA9281DC00E07009EE892 /* Main.storyboard */ = {
+		9538B8831DCE62EB007F6996 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				953FA9291DC00E07009EE892 /* Base */,
+				9538B8841DCE62EB007F6996 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		953FA92D1DC00E07009EE892 /* LaunchScreen.storyboard */ = {
+		9538B8881DCE62EC007F6996 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				953FA92E1DC00E07009EE892 /* Base */,
+				9538B8891DCE62EC007F6996 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -357,7 +207,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		953FA9471DC00E07009EE892 /* Debug */ = {
+		9538B88C1DCE62EC007F6996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -401,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		953FA9481DC00E07009EE892 /* Release */ = {
+		9538B88D1DCE62EC007F6996 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -439,7 +289,7 @@
 			};
 			name = Release;
 		};
-		953FA94A1DC00E07009EE892 /* Debug */ = {
+		9538B88F1DCE62EC007F6996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -450,7 +300,7 @@
 			};
 			name = Debug;
 		};
-		953FA94B1DC00E07009EE892 /* Release */ = {
+		9538B8901DCE62EC007F6996 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -458,95 +308,31 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.Kappenball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		953FA94D1DC00E07009EE892 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = KappenballTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kappenball.app/Kappenball";
-			};
-			name = Debug;
-		};
-		953FA94E1DC00E07009EE892 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = KappenballTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kappenball.app/Kappenball";
-			};
-			name = Release;
-		};
-		953FA9501DC00E07009EE892 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = KappenballUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Kappenball;
-			};
-			name = Debug;
-		};
-		953FA9511DC00E07009EE892 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = KappenballUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.sheffield.KappenballUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Kappenball;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		953FA9171DC00E07009EE892 /* Build configuration list for PBXProject "Kappenball" */ = {
+		9538B8721DCE62EB007F6996 /* Build configuration list for PBXProject "Kappenball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				953FA9471DC00E07009EE892 /* Debug */,
-				953FA9481DC00E07009EE892 /* Release */,
+				9538B88C1DCE62EC007F6996 /* Debug */,
+				9538B88D1DCE62EC007F6996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		953FA9491DC00E07009EE892 /* Build configuration list for PBXNativeTarget "Kappenball" */ = {
+		9538B88E1DCE62EC007F6996 /* Build configuration list for PBXNativeTarget "Kappenball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				953FA94A1DC00E07009EE892 /* Debug */,
-				953FA94B1DC00E07009EE892 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		953FA94C1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				953FA94D1DC00E07009EE892 /* Debug */,
-				953FA94E1DC00E07009EE892 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		953FA94F1DC00E07009EE892 /* Build configuration list for PBXNativeTarget "KappenballUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				953FA9501DC00E07009EE892 /* Debug */,
-				953FA9511DC00E07009EE892 /* Release */,
+				9538B88F1DCE62EC007F6996 /* Debug */,
+				9538B8901DCE62EC007F6996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 953FA9141DC00E07009EE892 /* Project object */;
+	rootObject = 9538B86F1DCE62EB007F6996 /* Project object */;
 }

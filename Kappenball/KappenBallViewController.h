@@ -1,16 +1,15 @@
 //
-//  ViewController.h
+//  KappenballViewController.h
 //  Kappenball
 //
-//  Created by Darren Vong on 25/10/2016.
+//  Created by Darren Vong on 05/11/2016.
 //  Copyright © 2016 Darren Vong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "GameModel.h"
-#import "GameModel.h"
 
-@interface KappenBallViewController : UIViewController
+@interface KappenballViewController : UIViewController
 
 @property (strong) GameModel* gameModel;
 
@@ -34,6 +33,9 @@
 
 @property (weak) IBOutlet UIButton* reset;
 
+// Button to allow users to submit their score
+@property (weak) IBOutlet UIButton* submit;
+
 -(void)updateView;
 -(void)updateAllScoreLabels;
 
@@ -41,6 +43,7 @@
 -(IBAction)sliderMoved:(id)sender;
 -(IBAction)resetButtonPressed:(id)sender;
 -(IBAction)pauseButtonPressed:(id)sender;
+-(IBAction)submitButtonPressed:(id)sender;
 
 -(void)setUpTimers;
 -(void)pauseTimers;

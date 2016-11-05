@@ -2,18 +2,21 @@
 //  AppDelegate.m
 //  Kappenball
 //
-//  Created by Darren Vong on 25/10/2016.
+//  Created by Darren Vong on 05/11/2016.
 //  Copyright © 2016 Darren Vong. All rights reserved.
 //
 
-#import "KappenBallAppDelegate.h"
+#import "KappenballAppDelegate.h"
 
-@implementation KappenBallAppDelegate
+@interface KappenballAppDelegate ()
+
+@end
+
+@implementation KappenballAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     return YES;
 }
 

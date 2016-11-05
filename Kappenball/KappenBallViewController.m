@@ -1,14 +1,18 @@
 //
-//  ViewController.m
+//  KappenballViewController.m
 //  Kappenball
 //
-//  Created by Darren Vong on 25/10/2016.
+//  Created by Darren Vong on 05/11/2016.
 //  Copyright © 2016 Darren Vong. All rights reserved.
 //
 
-#import "KappenBallViewController.h"
+#import "KappenballViewController.h"
 
-@implementation KappenBallViewController
+@interface KappenballViewController ()
+
+@end
+
+@implementation KappenballViewController
 
 -(void)updateAllScoreLabels {
     self.score.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
@@ -25,15 +29,15 @@
     // so that the ball popping animation may happen first.
     if (self.gameModel.hasHitTrap) {
         CGAffineTransform original = self.ball.transform;
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.ball.alpha = 0.0;
             self.ball.transform = CGAffineTransformScale(self.ball.transform, 2.0, 2.0);
         } completion:^(BOOL finished) {
             self.gameModel.energy = 0;
             [self.gameModel resetBallState];
+            [self setUpTimers];
             self.ball.alpha = 1.0;
             self.ball.transform = original;
-            [self setUpTimers];
         }];
         
         // Temporarily pause timer to stop this function being erroneously called again (due to animation
@@ -76,6 +80,10 @@
         self.pausedLabel.alpha = 1.0;
         [self.pause setTitle:@"Resume" forState:UIControlStateNormal];
     }
+}
+
+-(IBAction)submitButtonPressed:(id)sender {
+    
 }
 
 // Sets up the method with NSTimer so that the ball and RAND is updated periodically

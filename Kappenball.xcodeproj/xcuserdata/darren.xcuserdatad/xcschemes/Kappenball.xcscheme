@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "953FA91B1DC00E07009EE892"
+               BlueprintIdentifier = "9538B8761DCE62EB007F6996"
                BuildableName = "Kappenball.app"
                BlueprintName = "Kappenball"
                ReferencedContainer = "container:Kappenball.xcodeproj">
@@ -28,31 +28,11 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "953FA9341DC00E07009EE892"
-               BuildableName = "KappenballTests.xctest"
-               BlueprintName = "KappenballTests"
-               ReferencedContainer = "container:Kappenball.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "953FA93F1DC00E07009EE892"
-               BuildableName = "KappenballUITests.xctest"
-               BlueprintName = "KappenballUITests"
-               ReferencedContainer = "container:Kappenball.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "953FA91B1DC00E07009EE892"
+            BlueprintIdentifier = "9538B8761DCE62EB007F6996"
             BuildableName = "Kappenball.app"
             BlueprintName = "Kappenball"
             ReferencedContainer = "container:Kappenball.xcodeproj">
@@ -75,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "953FA91B1DC00E07009EE892"
+            BlueprintIdentifier = "9538B8761DCE62EB007F6996"
             BuildableName = "Kappenball.app"
             BlueprintName = "Kappenball"
             ReferencedContainer = "container:Kappenball.xcodeproj">
@@ -94,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "953FA91B1DC00E07009EE892"
+            BlueprintIdentifier = "9538B8761DCE62EB007F6996"
             BuildableName = "Kappenball.app"
             BlueprintName = "Kappenball"
             ReferencedContainer = "container:Kappenball.xcodeproj">
