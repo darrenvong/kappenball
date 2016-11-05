@@ -50,6 +50,7 @@ const float DELTA = BALL_SIZE / 2.0;
         _average = 0.0;
         _energy = 0;
         _isInGoal = NO;
+        _hasHitTrap = NO;
         _isGamePaused = NO;
     }
     return self;
@@ -124,16 +125,14 @@ const float DELTA = BALL_SIZE / 2.0;
 }
 
 // Checks whether the ball has dropped through the trap spikes when it drops below a certain y-coordinate level.
-// If it has, the position of the ball is reset to the top centre of the screen and the energy expended for the
-// current attempt is reset. Otherwise, it sets the flag isInGoal to YES (true) to keep track of
-// the fact the ball is safe from being spiked.
+// If it has, the flag hasHitTrap is set to YES to notify the game view controller that the ball has been spiked.
+// Otherwise, it sets the flag isInGoal to YES (true) to keep track of the fact the ball is safe from being spiked.
 -(void)adjustForTraps {
-    // The bottom of the ball has passed the "y-threshold line" - i.e. it could have hit a trap or in goal
+    // The bottom of the ball has passed the "y-threshold line" - i.e. it could have hit a trap or is in goal
     if ([self getBottomY] >= GAME_WINDOW_HEIGHT - TRAPS_HEIGHT) {
         // Reset ball position only if the ball was not in goal in the previous game tick
         if ([self isInTrapRange] && !self.isInGoal) {
-            self.energy = 0;
-            [self resetBallState];
+            self.hasHitTrap = YES;
         }
         else {
             self.isInGoal = YES;
@@ -190,7 +189,7 @@ const float DELTA = BALL_SIZE / 2.0;
     self.average = (self.score * self.average + self.energy) / (self.score + 1);
     self.score += 1;
     self.energy = 0;
-    // Increases the maximum velocity after every five points scored by player
+    // Increases the maximum velocity after every five points scored by player to make the game harder
     if (self.score % 5 == 0) {
         self.absMaxVelocity *= 1.25;
     }
@@ -201,6 +200,7 @@ const float DELTA = BALL_SIZE / 2.0;
     self.ballYPos = 0.0;
     self.acceleration = 0.0;
     self.isInGoal = NO;
+    self.hasHitTrap = NO;
 }
 
 -(void)resetScores {

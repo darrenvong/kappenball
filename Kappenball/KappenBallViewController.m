@@ -17,18 +17,39 @@
 }
 
 -(void)updateView {
+    // Update the model first
     [self.gameModel updateGameState];
-    CGPoint pos = self.ball.center;
-    pos.x = self.gameModel.ballXPos;
-    pos.y = self.gameModel.ballYPos;
-    self.ball.center = pos;
+    
+    // Spike animation (if applicable)
+    // The task of resetting the position of the ball and the energy expended score has been deferred here
+    // so that the ball popping animation may happen first.
+    if (self.gameModel.hasHitTrap) {
+        CGAffineTransform original = self.ball.transform;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.ball.alpha = 0.0;
+            self.ball.transform = CGAffineTransformScale(self.ball.transform, 2.0, 2.0);
+        } completion:^(BOOL finished) {
+            self.gameModel.energy = 0;
+            [self.gameModel resetBallState];
+            self.ball.alpha = 1.0;
+            self.ball.transform = original;
+            [self setUpTimers];
+        }];
+        
+        // Temporarily pause timer to stop this function being erroneously called again (due to animation
+        // being run on a different thread) which causes the spike animation and the associated completion
+        // callback being executed multiple times
+        [self pauseTimers];
+    }
+    else {
+        // Ball hasn't been spiked, so update the ball's position as usual from the updated data in the model
+        CGPoint pos = self.ball.center;
+        pos.x = self.gameModel.ballXPos;
+        pos.y = self.gameModel.ballYPos;
+        self.ball.center = pos;
+    }
     
     [self updateAllScoreLabels];
-    
-//    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
-//    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.gameModel.ball.RAND);
-//    NSLog(@"max velocity: %f", self.gameModel.absMaxVelocity);
-//    NSLog(@"random factor: %f, RAND: %d", self.gameModel.ball.randFactor, self.gameModel.ball.RAND);
 }
 
 -(IBAction)sliderMoved:(id)sender {
@@ -90,6 +111,15 @@
     [self.randFactor setMaximumTrackImage:maxTrackImage forState:UIControlStateNormal];
 }
 
+// Sets up a glowing blob that shows up under where the user taps the screen each time they do so
+-(void)setUpTouchBlob {
+    self.blob = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kappenblob.png"]];
+    self.blob.alpha = 0.0;
+    [self.background addSubview:self.blob];
+    // Scale down the blob as it's too large
+    self.blob.transform = CGAffineTransformScale(self.blob.transform, 0.5, 0.5);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -106,13 +136,7 @@
     self.ball.center = pos;
     
     [self customiseSlider];
-    
-    // Glowing blob that shows up whenever the user taps the screen so they know where about they've tapped
-    self.blob = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kappenblob.png"]];
-    self.blob.alpha = 0.0;
-    [self.background addSubview:self.blob];
-    // Scale down the blob as it's too large
-    self.blob.transform = CGAffineTransformScale(self.blob.transform, 0.5, 0.5);
+    [self setUpTouchBlob];
     
     // initialise slider's randomness factor to 0 to begin with
     self.randFactor.value = self.gameModel.randFactor;

@@ -45,6 +45,7 @@
 -(void)setUpTimers;
 -(void)pauseTimers;
 -(void)customiseSlider;
+-(void)setUpTouchBlob;
 
 @end
 

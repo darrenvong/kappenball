@@ -17,6 +17,7 @@
 @property (assign) float ballYPos;
 
 @property (assign) BOOL isInGoal;
+@property (assign) BOOL hasHitTrap;
 
 @property (assign) float velocity;
 @property (assign) float acceleration;
