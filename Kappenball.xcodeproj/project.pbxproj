@@ -21,6 +21,7 @@
 		953FA9451DC00E07009EE892 /* KappenballUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953FA9441DC00E07009EE892 /* KappenballUITests.m */; };
 		953FA9561DC01090009EE892 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9551DC01090009EE892 /* ball.png */; };
 		953FA9581DC0109F009EE892 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 953FA9571DC0109F009EE892 /* field.png */; };
+		956721291DCD6A23009BB82E /* kappenblob.png in Resources */ = {isa = PBXBuildFile; fileRef = 956721281DCD6A23009BB82E /* kappenblob.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		953FA9461DC00E07009EE892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		953FA9551DC01090009EE892 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		953FA9571DC0109F009EE892 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
+		956721281DCD6A23009BB82E /* kappenblob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kappenblob.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		953FA91F1DC00E07009EE892 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				956721281DCD6A23009BB82E /* kappenblob.png */,
 				953FA9571DC0109F009EE892 /* field.png */,
 				953FA9551DC01090009EE892 /* ball.png */,
 				953FA9201DC00E07009EE892 /* main.m */,
@@ -271,6 +274,7 @@
 				20AB54A91DC8B7890092A871 /* slider2.png in Resources */,
 				20AB54A61DC8B7700092A871 /* slider1.png in Resources */,
 				953FA92A1DC00E07009EE892 /* Main.storyboard in Resources */,
+				956721291DCD6A23009BB82E /* kappenblob.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

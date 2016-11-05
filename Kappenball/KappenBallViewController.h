@@ -19,6 +19,7 @@
 
 @property (weak) IBOutlet UIImageView* background;
 @property (strong) UIImageView* ball;
+@property (strong) UIImageView* blob;
 
 // Score labels
 @property (weak) IBOutlet UILabel* score;
@@ -35,9 +36,15 @@
 
 -(void)updateView;
 -(void)updateAllScoreLabels;
+
+// Actions that can be sent from UI elements from the storyboard
 -(IBAction)sliderMoved:(id)sender;
 -(IBAction)resetButtonPressed:(id)sender;
 -(IBAction)pauseButtonPressed:(id)sender;
+
+-(void)setUpTimers;
+-(void)pauseTimers;
+-(void)customiseSlider;
 
 @end
 

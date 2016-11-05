@@ -8,13 +8,6 @@
 
 #import "KappenBallViewController.h"
 
-@interface KappenBallViewController ()
-
--(void)setUpTimers;
--(void)pauseTimers;
-
-@end
-
 @implementation KappenBallViewController
 
 -(void)updateAllScoreLabels {
@@ -34,7 +27,7 @@
     
 //    NSLog(@"(%1.1f, %1.1f)", self.ball.center.x, self.ball.center.y);
 //    NSLog(@"ball origin: (%1.1f, %1.1f), RAND: %d", self.ball.frame.origin.x, self.ball.frame.origin.y, self.gameModel.ball.RAND);
-    NSLog(@"max velocity: %f", self.gameModel.absMaxVelocity);
+//    NSLog(@"max velocity: %f", self.gameModel.absMaxVelocity);
 //    NSLog(@"random factor: %f, RAND: %d", self.gameModel.ball.randFactor, self.gameModel.ball.RAND);
 }
 
@@ -82,6 +75,21 @@
     return UIInterfaceOrientationLandscapeRight;
 }
 
+// Customise the look and feel of the slider
+-(void)customiseSlider {
+    [self.randFactor setThumbImage:[UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
+    // Insets used to ensure only the central filled part of the image is stretched to fill the slider
+    UIEdgeInsets minTrackImgInsets = UIEdgeInsetsMake(2, 2, 2, 0);
+    UIEdgeInsets maxTrackImgInsets = UIEdgeInsetsMake(2, 0, 2, 2);
+    
+    UIImage* minTrackImage = [[UIImage imageNamed:@"slider2.png"] resizableImageWithCapInsets:minTrackImgInsets
+                                                                                 resizingMode:UIImageResizingModeStretch];
+    UIImage* maxTrackImage = [[UIImage imageNamed:@"slider1.png"] resizableImageWithCapInsets:maxTrackImgInsets
+                                                                                 resizingMode:UIImageResizingModeStretch];
+    [self.randFactor setMinimumTrackImage:minTrackImage forState:UIControlStateNormal];
+    [self.randFactor setMaximumTrackImage:maxTrackImage forState:UIControlStateNormal];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -97,18 +105,14 @@
     pos.x = self.gameModel.ballXPos;
     self.ball.center = pos;
     
-    // Customise the look and feel of the slider
-    [self.randFactor setThumbImage:[UIImage imageNamed:@"thumb.png"] forState:UIControlStateNormal];
-    // Define insets used to ensure only the central filled part of the image is stretched to fill the slider
-    UIEdgeInsets minTrackImgInsets = UIEdgeInsetsMake(2, 2, 2, 0);
-    UIEdgeInsets maxTrackImgInsets = UIEdgeInsetsMake(2, 0, 2, 2);
+    [self customiseSlider];
     
-    UIImage* minTrackImage = [[UIImage imageNamed:@"slider2.png"] resizableImageWithCapInsets:minTrackImgInsets
-                                                                                 resizingMode:UIImageResizingModeStretch];
-    UIImage* maxTrackImage = [[UIImage imageNamed:@"slider1.png"] resizableImageWithCapInsets:maxTrackImgInsets
-                                                                                 resizingMode:UIImageResizingModeStretch];
-    [self.randFactor setMinimumTrackImage:minTrackImage forState:UIControlStateNormal];
-    [self.randFactor setMaximumTrackImage:maxTrackImage forState:UIControlStateNormal];
+    // Glowing blob that shows up whenever the user taps the screen so they know where about they've tapped
+    self.blob = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kappenblob.png"]];
+    self.blob.alpha = 0.0;
+    [self.background addSubview:self.blob];
+    // Scale down the blob as it's too large
+    self.blob.transform = CGAffineTransformScale(self.blob.transform, 0.5, 0.5);
     
     // initialise slider's randomness factor to 0 to begin with
     self.randFactor.value = self.gameModel.randFactor;
@@ -116,34 +120,41 @@
     [self setUpTimers];
 }
 
-//-(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{
-//}
-//
-//-(void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event{
-//}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch* tap = [touches anyObject];
+    CGPoint tapLocation = [tap locationInView:self.background];
+    self.blob.center = tapLocation;
+    self.blob.alpha = 0.8;
+}
+
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch* tap = [touches anyObject];
+    CGPoint tapLocation = [tap locationInView:self.background];
+    self.blob.center = tapLocation;
+}
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent*)event {
-//    NSSet<UITouch *> *taps = [event touchesForView:self.background];
-    for (UITouch* tap in touches) {
-        
-        CGPoint tapLocation = [tap locationInView:self.background];
-        NSLog(@"Tapped location: (%.1f, %.1f)", tapLocation.x, tapLocation.y);
-        if (tapLocation.x <= self.gameModel.ballXPos) { // Tap is to the left of the ball
-            [self.gameModel updateAcceleration:YES];
-            self.gameModel.energy += 1;
-        }
-        else {
-            [self.gameModel updateAcceleration:NO];
-            self.gameModel.energy += 1;
-        }
-        
+    UITouch* tap = [touches anyObject];
+    CGPoint tapLocation = [tap locationInView:self.background];
+    
+    // Tap is to the left of the ball
+    if (tapLocation.x <= self.gameModel.ballXPos) {
+        [self.gameModel updateAcceleration:YES];
+        self.gameModel.energy += 1;
     }
+    else {
+        [self.gameModel updateAcceleration:NO];
+        self.gameModel.energy += 1;
+    }
+    
+    // Hide touch blob view now that the touch event has finished
+    self.blob.alpha = 0.0;
     
 }
 
-//-(void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event {
-//
-//}
+-(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.blob.alpha = 0.0;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

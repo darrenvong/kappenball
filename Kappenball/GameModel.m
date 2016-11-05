@@ -87,23 +87,19 @@ const float DELTA = BALL_SIZE / 2.0;
         // Left goal left wall
         if (leftMostX <= SIDE_TRAPS_WIDTH) {
             self.ballXPos = SIDE_TRAPS_WIDTH + (0.5 * BALL_SIZE);
-            NSLog(@"1");
         }
         // Left goal right wall
         else if (rightMostX >= SIDE_TRAPS_WIDTH + GOAL_WIDTH && rightMostX <= SIDE_TRAPS_WIDTH + GOAL_WIDTH + DELTA) {
             self.ballXPos = SIDE_TRAPS_WIDTH + GOAL_WIDTH - (0.5 * BALL_SIZE);
-            NSLog(@"2");
         }
         // Right goal left wall
         else if (leftMostX <= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH &&
                  leftMostX >= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH - DELTA) {
             self.ballXPos = GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - GOAL_WIDTH + (0.5 * BALL_SIZE);
-            NSLog(@"3");
         }
         // Right goal right wall
         else if (rightMostX >= GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH) {
             self.ballXPos = GAME_WINDOW_WIDTH - SIDE_TRAPS_WIDTH - (0.5 * BALL_SIZE);
-            NSLog(@"4");
         }
     }
 }
@@ -136,7 +132,6 @@ const float DELTA = BALL_SIZE / 2.0;
     if ([self getBottomY] >= GAME_WINDOW_HEIGHT - TRAPS_HEIGHT) {
         // Reset ball position only if the ball was not in goal in the previous game tick
         if ([self isInTrapRange] && !self.isInGoal) {
-            NSLog(@"Ball spiked!");
             self.energy = 0;
             [self resetBallState];
         }
@@ -150,7 +145,6 @@ const float DELTA = BALL_SIZE / 2.0;
 // reset to the top centre of the screen and the respective scores are updated.
 -(void)adjustForGoals {
     if (self.isInGoal && [self getBottomY] >= GAME_WINDOW_HEIGHT) {
-        NSLog(@"Point scored!");
         [self updateScore];
         [self resetBallState];
     }
