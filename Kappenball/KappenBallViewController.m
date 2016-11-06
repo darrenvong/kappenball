@@ -152,6 +152,16 @@
     [self setUpTimers];
 }
 
+#pragma mark - Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"submitScore"]) {
+        ScoreSubmissionViewController* submitScoreView = [segue destinationViewController];
+        // Additional set up here
+        submitScoreView.delegate = self;
+        [self pauseTimers];
+    }
+}
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch* tap = [touches anyObject];
     CGPoint tapLocation = [tap locationInView:self.background];
@@ -186,6 +196,10 @@
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.blob.alpha = 0.0;
+}
+
+-(void)resumeGame {
+    [self setUpTimers];
 }
 
 - (void)didReceiveMemoryWarning {

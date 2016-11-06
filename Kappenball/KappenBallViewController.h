@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "GameModel.h"
+#import "ScoreSubmissionViewController.h"
+#import "ScoreSubmissionViewControllerDelegate.h"
 
-@interface KappenballViewController : UIViewController
+@interface KappenballViewController : UIViewController <ScoreSubmissionViewControllerDelegate>
 
 @property (strong) GameModel* gameModel;
 

@@ -199,6 +199,7 @@ const float DELTA = BALL_SIZE / 2.0;
     self.score = 0;
     self.average = 0.0;
     self.energy = 0;
+    self.absMaxVelocity = 20.0;
 }
 
 @end

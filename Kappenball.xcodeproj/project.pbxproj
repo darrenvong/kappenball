@@ -20,6 +20,8 @@
 		9538B89C1DCE64C6007F6996 /* slider2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8971DCE64C6007F6996 /* slider2.png */; };
 		9538B89D1DCE64C6007F6996 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8981DCE64C6007F6996 /* thumb.png */; };
 		9538B89F1DCE6536007F6996 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B89E1DCE6536007F6996 /* field.png */; };
+		9538B8A21DCE6F64007F6996 /* ScoreSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */; };
+		9538B8A61DCE8AB0007F6996 /* highscore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8A51DCE8AB0007F6996 /* highscore.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		9538B8971DCE64C6007F6996 /* slider2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider2.png; sourceTree = "<group>"; };
 		9538B8981DCE64C6007F6996 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		9538B89E1DCE6536007F6996 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
+		9538B8A01DCE6F64007F6996 /* ScoreSubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSubmissionViewController.h; sourceTree = "<group>"; };
+		9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSubmissionViewController.m; sourceTree = "<group>"; };
+		9538B8A51DCE8AB0007F6996 /* highscore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = highscore.plist; sourceTree = "<group>"; };
+		9538B8A71DCE8D02007F6996 /* ScoreSubmissionViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSubmissionViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +85,10 @@
 				9538B87E1DCE62EB007F6996 /* KappenballAppDelegate.m */,
 				9538B8801DCE62EB007F6996 /* KappenballViewController.h */,
 				9538B8811DCE62EB007F6996 /* KappenballViewController.m */,
+				9538B8A71DCE8D02007F6996 /* ScoreSubmissionViewControllerDelegate.h */,
 				9538B8831DCE62EB007F6996 /* Main.storyboard */,
+				9538B8A01DCE6F64007F6996 /* ScoreSubmissionViewController.h */,
+				9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */,
 				9538B8861DCE62EC007F6996 /* Assets.xcassets */,
 				9538B8881DCE62EC007F6996 /* LaunchScreen.storyboard */,
 				9538B88B1DCE62EC007F6996 /* Info.plist */,
@@ -98,6 +107,7 @@
 				9538B8971DCE64C6007F6996 /* slider2.png */,
 				9538B8981DCE64C6007F6996 /* thumb.png */,
 				9538B87B1DCE62EB007F6996 /* main.m */,
+				9538B8A51DCE8AB0007F6996 /* highscore.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 				9538B8991DCE64C6007F6996 /* ball.png in Resources */,
 				9538B89D1DCE64C6007F6996 /* thumb.png in Resources */,
 				9538B89C1DCE64C6007F6996 /* slider2.png in Resources */,
+				9538B8A61DCE8AB0007F6996 /* highscore.plist in Resources */,
 				9538B89B1DCE64C6007F6996 /* slider1.png in Resources */,
 				9538B8851DCE62EB007F6996 /* Main.storyboard in Resources */,
 			);
@@ -182,6 +193,7 @@
 				9538B8931DCE63B1007F6996 /* GameModel.m in Sources */,
 				9538B87F1DCE62EB007F6996 /* KappenballAppDelegate.m in Sources */,
 				9538B87C1DCE62EB007F6996 /* main.m in Sources */,
+				9538B8A21DCE6F64007F6996 /* ScoreSubmissionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
