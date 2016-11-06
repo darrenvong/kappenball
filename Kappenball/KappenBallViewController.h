@@ -13,7 +13,7 @@
 
 @interface KappenballViewController : UIViewController <ScoreSubmissionViewControllerDelegate>
 
-@property (strong) GameModel* gameModel;
+@property (strong) GameModel* model;
 
 //Timer for animating the position of the ball
 @property (strong) NSTimer* ballTimer;

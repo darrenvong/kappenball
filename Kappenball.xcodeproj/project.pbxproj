@@ -22,6 +22,7 @@
 		9538B89F1DCE6536007F6996 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B89E1DCE6536007F6996 /* field.png */; };
 		9538B8A21DCE6F64007F6996 /* ScoreSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */; };
 		9538B8A61DCE8AB0007F6996 /* highscore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8A51DCE8AB0007F6996 /* highscore.plist */; };
+		9538B8B01DCEC858007F6996 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8AF1DCEC858007F6996 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSubmissionViewController.m; sourceTree = "<group>"; };
 		9538B8A51DCE8AB0007F6996 /* highscore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = highscore.plist; sourceTree = "<group>"; };
 		9538B8A71DCE8D02007F6996 /* ScoreSubmissionViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSubmissionViewControllerDelegate.h; sourceTree = "<group>"; };
+		9538B8AE1DCEC858007F6996 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		9538B8AF1DCEC858007F6996 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				9538B8811DCE62EB007F6996 /* KappenballViewController.m */,
 				9538B8A71DCE8D02007F6996 /* ScoreSubmissionViewControllerDelegate.h */,
 				9538B8831DCE62EB007F6996 /* Main.storyboard */,
+				9538B8AE1DCEC858007F6996 /* RootViewController.h */,
+				9538B8AF1DCEC858007F6996 /* RootViewController.m */,
 				9538B8A01DCE6F64007F6996 /* ScoreSubmissionViewController.h */,
 				9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */,
 				9538B8861DCE62EC007F6996 /* Assets.xcassets */,
@@ -191,6 +196,7 @@
 			files = (
 				9538B8821DCE62EB007F6996 /* KappenballViewController.m in Sources */,
 				9538B8931DCE63B1007F6996 /* GameModel.m in Sources */,
+				9538B8B01DCEC858007F6996 /* RootViewController.m in Sources */,
 				9538B87F1DCE62EB007F6996 /* KappenballAppDelegate.m in Sources */,
 				9538B87C1DCE62EB007F6996 /* main.m in Sources */,
 				9538B8A21DCE6F64007F6996 /* ScoreSubmissionViewController.m in Sources */,

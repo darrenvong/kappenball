@@ -15,26 +15,26 @@
 @implementation KappenballViewController
 
 -(void)updateAllScoreLabels {
-    self.score.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
-    self.average.text = [NSString stringWithFormat:@"Average: %1.0f", self.gameModel.average];
-    self.energy.text = [NSString stringWithFormat:@"Energy: %d", self.gameModel.energy];
+    self.score.text = [NSString stringWithFormat:@"Score: %d", self.model.score];
+    self.average.text = [NSString stringWithFormat:@"Average: %1.0f", self.model.average];
+    self.energy.text = [NSString stringWithFormat:@"Energy: %d", self.model.energy];
 }
 
 -(void)updateView {
     // Update the model first
-    [self.gameModel updateGameState];
+    [self.model updateGameState];
     
     // Spike animation (if applicable)
     // The task of resetting the position of the ball and the energy expended score has been deferred here
     // so that the ball popping animation may happen first.
-    if (self.gameModel.hasHitTrap) {
+    if (self.model.hasHitTrap) {
         CGAffineTransform original = self.ball.transform;
         [UIView animateWithDuration:0.3 animations:^{
             self.ball.alpha = 0.0;
             self.ball.transform = CGAffineTransformScale(self.ball.transform, 2.0, 2.0);
         } completion:^(BOOL finished) {
-            self.gameModel.energy = 0;
-            [self.gameModel resetBallState];
+            self.model.energy = 0;
+            [self.model resetBallState];
             [self setUpTimers];
             self.ball.alpha = 1.0;
             self.ball.transform = original;
@@ -48,8 +48,8 @@
     else {
         // Ball hasn't been spiked, so update the ball's position as usual from the updated data in the model
         CGPoint pos = self.ball.center;
-        pos.x = self.gameModel.ballXPos;
-        pos.y = self.gameModel.ballYPos;
+        pos.x = self.model.ballXPos;
+        pos.y = self.model.ballYPos;
         self.ball.center = pos;
     }
     
@@ -58,24 +58,24 @@
 
 -(IBAction)sliderMoved:(id)sender {
     // Change the randomness factor when slider changes
-    self.gameModel.randFactor = self.randFactor.value;
+    self.model.randFactor = self.randFactor.value;
 }
 
 -(IBAction)resetButtonPressed:(id)sender {
     // Reset the label score when reset button is pressed
-    [self.gameModel resetScores];
+    [self.model resetScores];
     [self updateAllScoreLabels];
 }
 
 -(IBAction)pauseButtonPressed:(id)sender {
-    if (self.gameModel.isGamePaused) {
-        self.gameModel.isGamePaused = NO;
+    if (self.model.isGamePaused) {
+        self.model.isGamePaused = NO;
         self.pausedLabel.alpha = 0.0;
         [self setUpTimers];
         [self.pause setTitle:@"Pause" forState:UIControlStateNormal];
     }
     else {
-        self.gameModel.isGamePaused = YES;
+        self.model.isGamePaused = YES;
         [self pauseTimers];
         self.pausedLabel.alpha = 1.0;
         [self.pause setTitle:@"Resume" forState:UIControlStateNormal];
@@ -132,7 +132,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.gameModel = [[GameModel alloc]init];
+    self.model = [[GameModel alloc]init];
     [self updateAllScoreLabels];
     
     self.ball = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ball.png"]];
@@ -140,14 +140,14 @@
     
     // Set the ball's initial x coordinate
     CGPoint pos = self.ball.center;
-    pos.x = self.gameModel.ballXPos;
+    pos.x = self.model.ballXPos;
     self.ball.center = pos;
     
     [self customiseSlider];
     [self setUpTouchBlob];
     
     // initialise slider's randomness factor to 0 to begin with
-    self.randFactor.value = self.gameModel.randFactor;
+    self.randFactor.value = self.model.randFactor;
     
     [self setUpTimers];
 }
@@ -158,6 +158,7 @@
         ScoreSubmissionViewController* submitScoreView = [segue destinationViewController];
         // Additional set up here
         submitScoreView.delegate = self;
+        submitScoreView.model = self.model;
         [self pauseTimers];
     }
 }
@@ -180,13 +181,13 @@
     CGPoint tapLocation = [tap locationInView:self.background];
     
     // Tap is to the left of the ball
-    if (tapLocation.x <= self.gameModel.ballXPos) {
-        [self.gameModel updateAcceleration:YES];
-        self.gameModel.energy += 1;
+    if (tapLocation.x <= self.model.ballXPos) {
+        [self.model updateAcceleration:YES];
+        self.model.energy += 1;
     }
     else {
-        [self.gameModel updateAcceleration:NO];
-        self.gameModel.energy += 1;
+        [self.model updateAcceleration:NO];
+        self.model.energy += 1;
     }
     
     // Hide touch blob view now that the touch event has finished

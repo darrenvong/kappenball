@@ -32,9 +32,9 @@
     }
     
     // Print out what's in the existing high score (for debugging)
-    for (NSArray* row in highscores) {
-        NSLog(@"Name: %@, average: %@, score: %@", row[0], row[1], row[2]);
-    }
+//    for (NSArray* row in highscores) {
+//        NSLog(@"Name: %@, average: %@, score: %@", row[0], row[1], row[2]);
+//    }
     
     // Build score data from what's being submitted by user
     NSMutableArray* userSubmittedData = [[NSMutableArray alloc]init];
@@ -93,9 +93,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    KappenballViewController* mainGameController = (KappenballViewController*)self.delegate;
-    self.average.text = [NSString stringWithFormat:@"Average Energy Expended: %1.0f", mainGameController.gameModel.average];
-    self.score.text = [NSString stringWithFormat:@"Points: %d", mainGameController.gameModel.score];
+    self.average.text = [NSString stringWithFormat:@"Average Energy Expended: %1.0f", self.model.average];
+    self.score.text = [NSString stringWithFormat:@"Points: %d", self.model.score];
 }
 
 - (void)didReceiveMemoryWarning {

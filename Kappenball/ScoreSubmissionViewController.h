@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ScoreSubmissionViewControllerDelegate.h"
 #import "KappenballViewController.h"
+#import "GameModel.h"
 
 @interface ScoreSubmissionViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak) id<ScoreSubmissionViewControllerDelegate> delegate;
+@property (weak) GameModel* model;
 
 @property (weak) IBOutlet UILabel* textFieldLabel;
 @property (weak) IBOutlet UITextField* username;
