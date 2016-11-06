@@ -82,10 +82,6 @@
     }
 }
 
--(IBAction)submitButtonPressed:(id)sender {
-    
-}
-
 // Sets up the method with NSTimer so that the ball and RAND is updated periodically
 -(void)setUpTimers {
     self.ballTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateView) userInfo:nil repeats:YES];
@@ -199,7 +195,15 @@
     self.blob.alpha = 0.0;
 }
 
+// ScoreSubmissionController protocol methods
 -(void)resumeGame {
+    [self setUpTimers];
+}
+
+-(void)resetGame {
+    [self.model resetScores];
+    [self updateAllScoreLabels];
+    [self.model resetBallState];
     [self setUpTimers];
 }
 

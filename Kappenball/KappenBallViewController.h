@@ -45,7 +45,6 @@
 -(IBAction)sliderMoved:(id)sender;
 -(IBAction)resetButtonPressed:(id)sender;
 -(IBAction)pauseButtonPressed:(id)sender;
--(IBAction)submitButtonPressed:(id)sender;
 
 -(void)setUpTimers;
 -(void)pauseTimers;

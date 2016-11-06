@@ -122,7 +122,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hJ-AO-Alj"/>
                                     <segue destination="6GO-Yy-wCm" kind="presentation" identifier="submitScore" id="ssB-A6-kM2"/>
                                 </connections>
                             </button>
