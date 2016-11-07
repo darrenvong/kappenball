@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+// This delegate protocol essentially allows the ScoreSubmissionViewController to pass message
+// back to the delegate (the main game controller, i.e. KappenballViewController) mainly when it's
+// about to be dismissed.
 @protocol ScoreSubmissionViewControllerDelegate <NSObject>
 
 -(void)resumeGame;

@@ -23,6 +23,7 @@
     [self.username resignFirstResponder];
 }
 
+// Action fired when user presses the "Submit" button to submit their score
 -(IBAction)submitPressed:(id)sender {
     if (self.username.text.length == 0) {
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid Name"
@@ -54,8 +55,10 @@
         [self.highscores addObject:player];
         // Sort the data in order first before writing back to file
         NSSortDescriptor* pointSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO];
-        NSSortDescriptor* energySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"averageEnergy" ascending:YES];
-        [self.highscores sortUsingDescriptors:[NSArray arrayWithObjects:pointSortDescriptor, energySortDescriptor, nil]];
+        NSSortDescriptor* energySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"averageEnergy"
+                                                                               ascending:YES];
+        [self.highscores sortUsingDescriptors:
+                            [NSArray arrayWithObjects:pointSortDescriptor, energySortDescriptor, nil]];
         BOOL didWriteToFile = [NSKeyedArchiver archiveRootObject:self.highscores toFile:path];
         if (!didWriteToFile) {
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Submission Error"
@@ -82,6 +85,7 @@
     }
 }
 
+// Action fired when user presses "Cancel" and wishes to resume the game
 -(IBAction)cancelPressed:(id)sender {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cancel Confirmation"
                                     message:@"Are you sure you do not want to submit your score? Tapping 'Yes' will bring you back to the game."

@@ -15,4 +15,6 @@
 @property (weak) IBOutlet UIButton* play;
 @property (weak) IBOutlet UIButton* viewHighscore;
 
+-(IBAction)goHome:(UIStoryboardSegue*) segue;
+
 @end

@@ -14,6 +14,10 @@
 
 @implementation RootViewController
 
+// Unwind segue to allow the user to go back to this home screen from the main game
+-(IBAction)goHome:(UIStoryboardSegue *)segue {
+}
+
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
 }
@@ -33,9 +37,8 @@
 }
 
 
-// #pragma mark - Navigation
+#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

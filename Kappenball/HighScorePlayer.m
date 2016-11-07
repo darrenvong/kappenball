@@ -8,6 +8,8 @@
 
 #import "HighScorePlayer.h"
 
+// A class encapsulating the high score info submitted by user. Implements the
+// NSCoding protocol so that it can be saved to an archive file
 @implementation HighScorePlayer
 
 -(id)init {

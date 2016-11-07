@@ -24,7 +24,7 @@
     // Update the model first
     [self.model updateGameState];
     
-    // Spike animation (if applicable)
+    // Perform ball popping animation when it has hit trap
     // The task of resetting the position of the ball and the energy expended score has been deferred here
     // so that the ball popping animation may happen first.
     if (self.model.hasHitTrap) {
@@ -154,6 +154,7 @@
     }
 }
 
+// Touch event handler that causes a blob to show up when user taps the screen
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch* tap = [touches anyObject];
     CGPoint tapLocation = [tap locationInView:self.background];
@@ -161,12 +162,15 @@
     self.blob.alpha = 0.8;
 }
 
+// Moves the blob to where the user next touched the screen
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch* tap = [touches anyObject];
     CGPoint tapLocation = [tap locationInView:self.background];
     self.blob.center = tapLocation;
 }
 
+// Touch event handler which marks a complete tap from the user and so is where
+// the location of the tap with respect to the position of the ball is worked out
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent*)event {
     UITouch* tap = [touches anyObject];
     CGPoint tapLocation = [tap locationInView:self.background];

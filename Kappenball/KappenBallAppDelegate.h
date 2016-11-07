@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  KappenballAppDelegate.h
 //  Kappenball
 //
 //  Created by Darren Vong on 05/11/2016.

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// Custom UITableViewCell class to allow multiple columns of items to be displayed.
+// Implementation file only contains auto-generated code.
 @interface HighScoreTableViewCell : UITableViewCell
 
 @property (weak) IBOutlet UILabel* rank;

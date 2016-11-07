@@ -141,7 +141,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IIx-E8-sf3" kind="show" identifier="goHome" id="NbJ-Va-ntn"/>
+                                    <segue destination="V9C-ZB-MZb" kind="unwind" identifier="goHome" unwindAction="goHome:" id="bN1-2m-ITL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,6 +162,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="V9C-ZB-MZb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-134" y="-78"/>
         </scene>

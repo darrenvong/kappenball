@@ -16,6 +16,7 @@
 
 @implementation HighScoreTableViewController
 
+// Sends the user back to the home page of app when back button is pressed
 -(IBAction)backPressed:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -23,8 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Table header set up
-    CGRect titleRect = CGRectMake(0, 0, 300, 40);
-    UILabel *tableTitle = [[UILabel alloc] initWithFrame:titleRect];
+    UILabel *tableTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
     tableTitle.textColor = [UIColor whiteColor];
     tableTitle.backgroundColor = [self.tableView backgroundColor];
     tableTitle.opaque = YES;
@@ -62,6 +62,7 @@
     return 1;
 }
 
+// Number of rows is the number of highscore entries the users have submitted
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.highscores count];
 }
@@ -79,7 +80,7 @@
         cell.score.text = [tableHeader objectAtIndex:3];
     }
     else {
-        // Display user submitted details
+        // Display user submitted details otherwise
         HighScorePlayer* player = [self.highscores objectAtIndex:indexPath.row];
         cell.rank.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
         cell.name.text = player.name;
