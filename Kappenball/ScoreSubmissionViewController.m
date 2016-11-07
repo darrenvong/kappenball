@@ -29,7 +29,7 @@
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid Name"
                                                                        message:@"Did you forget to enter your name?"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:confirmAction];
         [self presentViewController:alert animated:YES completion:nil];
         return;
