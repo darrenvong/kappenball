@@ -11,6 +11,7 @@
 @protocol ScoreSubmissionViewControllerDelegate <NSObject>
 
 -(void)resumeGame;
+-(void)pauseGame;
 -(void)resetGame;
 
 @end

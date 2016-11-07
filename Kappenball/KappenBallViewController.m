@@ -69,16 +69,12 @@
 
 -(IBAction)pauseButtonPressed:(id)sender {
     if (self.model.isGamePaused) {
-        self.model.isGamePaused = NO;
-        self.pausedLabel.alpha = 0.0;
-        [self setUpTimers];
-        [self.pause setTitle:@"Pause" forState:UIControlStateNormal];
+        // The game is currently paused, so pressing the button resumes the game
+        [self resumeGame];
     }
     else {
-        self.model.isGamePaused = YES;
-        [self pauseTimers];
-        self.pausedLabel.alpha = 1.0;
-        [self.pause setTitle:@"Resume" forState:UIControlStateNormal];
+        // The game is currently playing, so pressing the button pauses the game
+        [self pauseGame];
     }
 }
 
@@ -155,7 +151,6 @@
         // Additional set up here
         submitScoreView.delegate = self;
         submitScoreView.model = self.model;
-        [self pauseTimers];
     }
 }
 
@@ -197,14 +192,24 @@
 
 // ScoreSubmissionController protocol methods
 -(void)resumeGame {
+    self.pausedLabel.alpha = 0.0;
     [self setUpTimers];
+    [self.pause setTitle:@"Pause" forState:UIControlStateNormal];
+    self.model.isGamePaused = NO;
+}
+
+-(void)pauseGame {
+    [self pauseTimers];
+    self.pausedLabel.alpha = 1.0;
+    [self.pause setTitle:@"Resume" forState:UIControlStateNormal];
+    self.model.isGamePaused = YES;
 }
 
 -(void)resetGame {
+    [self resumeGame];
     [self.model resetScores];
     [self updateAllScoreLabels];
     [self.model resetBallState];
-    [self setUpTimers];
 }
 
 - (void)didReceiveMemoryWarning {

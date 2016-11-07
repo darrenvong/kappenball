@@ -35,34 +35,32 @@
     }
     else {
         // Load existing highscore into memory
-        NSString* path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"highscore.plist"];
+        NSString* path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"highscore.archive"];
         NSFileManager* fileManager = [NSFileManager defaultManager];
-        NSMutableArray* highscores;
         if (![fileManager fileExistsAtPath:path]) { // No existing score found
-            highscores = [[NSMutableArray alloc]init];
+            self.highscores = [[NSMutableArray alloc]init];
         }
         else {
-            highscores = [[NSMutableArray alloc]initWithContentsOfFile:path];
-        }
-        
-        // Print out what's in the existing high score (for debugging)
-        for (NSArray* row in highscores) {
-            NSLog(@"Name: %@, average: %@, score: %@", row[0], row[1], row[2]);
+            self.highscores = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
         }
         
         // Build score data from what's being submitted by user
-        NSMutableArray* userSubmittedData = [[NSMutableArray alloc]init];
-        [userSubmittedData addObject:self.username.text];
-        [userSubmittedData addObject:[self getScore:self.average.text]];
-        [userSubmittedData addObject:[self getScore:self.score.text]];
+        HighScorePlayer* player = [[HighScorePlayer alloc]init];
+        player.name = self.username.text;
+        player.averageEnergy = [self getScore:self.average.text];
+        player.score = [self getScore:self.score.text];
         
-        // Add this new score to the existing highscores array and write it back to file
-        [highscores addObject:userSubmittedData];
-        bool didWriteToFile = [highscores writeToFile:path atomically:YES];
+        // Add this new score to the existing highscores array
+        [self.highscores addObject:player];
+        // Sort the data in order first before writing back to file
+        NSSortDescriptor* pointSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO];
+        NSSortDescriptor* energySortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"averageEnergy" ascending:YES];
+        [self.highscores sortUsingDescriptors:[NSArray arrayWithObjects:pointSortDescriptor, energySortDescriptor, nil]];
+        BOOL didWriteToFile = [NSKeyedArchiver archiveRootObject:self.highscores toFile:path];
         if (!didWriteToFile) {
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Submission Error"
-                                                                           message:@"Sorry, there was an error when you tried to submit your score. Please try again!"
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
+                                            message:@"Sorry, there was an error when you tried to submit your score. Please try again!"
+                                            preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:nil];
             [alert addAction:confirmAction];
@@ -71,13 +69,13 @@
         else {
             //Score submitted successfully, so dismiss view and reset the game
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success"
-                                                                           message:@"Your score has been successfully submitted."
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
+                                            message:@"Your score has been successfully submitted."
+                                            preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction* action) {
-                                                                      [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-                                                                      [self.delegate resetGame];
-                                                                  }];
+                                                handler:^(UIAlertAction* action) {
+                                                    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                                                    [self.delegate resetGame];
+                                                }];
             [alert addAction:confirmAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
@@ -87,7 +85,7 @@
 -(IBAction)cancelPressed:(id)sender {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Cancel Confirmation"
                                     message:@"Are you sure you do not want to submit your score? Tapping 'Yes' will bring you back to the game."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+                                    preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction* action) {
@@ -101,10 +99,10 @@
 }
 
 //Helper method to extract the average and points scored as a NSNumber object from the label in view
--(NSNumber*)getScore:(NSString*)text {
+-(int)getScore:(NSString*)text {
     NSString* scoreString = [text componentsSeparatedByString:@":"][1];
     scoreString = [scoreString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    return [NSNumber numberWithInt:[scoreString intValue]];
+    return [scoreString intValue];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -118,6 +116,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // View loaded, so pause the game in background in case user wants to go back to it if they got here by mistake
+    if (!self.model.isGamePaused) {
+        [self.delegate pauseGame];
+        self.model.isGamePaused = YES;
+    }
     // Update the text labels with the scores the user is about to submit
     self.average.text = [NSString stringWithFormat:@"Average Energy Expended: %1.0f", self.model.average];
     self.score.text = [NSString stringWithFormat:@"Points: %d", self.model.score];

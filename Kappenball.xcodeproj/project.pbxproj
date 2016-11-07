@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95197E0A1DCFB15700C7AFCE /* HighScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95197E091DCFB15700C7AFCE /* HighScoreTableViewCell.m */; };
+		95197E0D1DCFB29E00C7AFCE /* HighScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95197E0C1DCFB29E00C7AFCE /* HighScoreTableViewController.m */; };
+		95197E101DCFCFCF00C7AFCE /* HighScorePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95197E0F1DCFCFCF00C7AFCE /* HighScorePlayer.m */; };
 		9538B87C1DCE62EB007F6996 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B87B1DCE62EB007F6996 /* main.m */; };
 		9538B87F1DCE62EB007F6996 /* KappenballAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B87E1DCE62EB007F6996 /* KappenballAppDelegate.m */; };
 		9538B8821DCE62EB007F6996 /* KappenballViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8811DCE62EB007F6996 /* KappenballViewController.m */; };
@@ -21,11 +24,16 @@
 		9538B89D1DCE64C6007F6996 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8981DCE64C6007F6996 /* thumb.png */; };
 		9538B89F1DCE6536007F6996 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 9538B89E1DCE6536007F6996 /* field.png */; };
 		9538B8A21DCE6F64007F6996 /* ScoreSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */; };
-		9538B8A61DCE8AB0007F6996 /* highscore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9538B8A51DCE8AB0007F6996 /* highscore.plist */; };
 		9538B8B01DCEC858007F6996 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9538B8AF1DCEC858007F6996 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95197E081DCFB15700C7AFCE /* HighScoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreTableViewCell.h; sourceTree = "<group>"; };
+		95197E091DCFB15700C7AFCE /* HighScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreTableViewCell.m; sourceTree = "<group>"; };
+		95197E0B1DCFB29E00C7AFCE /* HighScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreTableViewController.h; sourceTree = "<group>"; };
+		95197E0C1DCFB29E00C7AFCE /* HighScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreTableViewController.m; sourceTree = "<group>"; };
+		95197E0E1DCFCFCE00C7AFCE /* HighScorePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScorePlayer.h; sourceTree = "<group>"; };
+		95197E0F1DCFCFCF00C7AFCE /* HighScorePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScorePlayer.m; sourceTree = "<group>"; };
 		9538B8771DCE62EB007F6996 /* Kappenball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kappenball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9538B87B1DCE62EB007F6996 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9538B87D1DCE62EB007F6996 /* KappenballAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KappenballAppDelegate.h; sourceTree = "<group>"; };
@@ -46,7 +54,6 @@
 		9538B89E1DCE6536007F6996 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
 		9538B8A01DCE6F64007F6996 /* ScoreSubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSubmissionViewController.h; sourceTree = "<group>"; };
 		9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSubmissionViewController.m; sourceTree = "<group>"; };
-		9538B8A51DCE8AB0007F6996 /* highscore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = highscore.plist; sourceTree = "<group>"; };
 		9538B8A71DCE8D02007F6996 /* ScoreSubmissionViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSubmissionViewControllerDelegate.h; sourceTree = "<group>"; };
 		9538B8AE1DCEC858007F6996 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9538B8AF1DCEC858007F6996 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -90,8 +97,14 @@
 				9538B8811DCE62EB007F6996 /* KappenballViewController.m */,
 				9538B8A71DCE8D02007F6996 /* ScoreSubmissionViewControllerDelegate.h */,
 				9538B8831DCE62EB007F6996 /* Main.storyboard */,
+				95197E0B1DCFB29E00C7AFCE /* HighScoreTableViewController.h */,
+				95197E0C1DCFB29E00C7AFCE /* HighScoreTableViewController.m */,
+				95197E081DCFB15700C7AFCE /* HighScoreTableViewCell.h */,
+				95197E091DCFB15700C7AFCE /* HighScoreTableViewCell.m */,
 				9538B8AE1DCEC858007F6996 /* RootViewController.h */,
 				9538B8AF1DCEC858007F6996 /* RootViewController.m */,
+				95197E0E1DCFCFCE00C7AFCE /* HighScorePlayer.h */,
+				95197E0F1DCFCFCF00C7AFCE /* HighScorePlayer.m */,
 				9538B8A01DCE6F64007F6996 /* ScoreSubmissionViewController.h */,
 				9538B8A11DCE6F64007F6996 /* ScoreSubmissionViewController.m */,
 				9538B8861DCE62EC007F6996 /* Assets.xcassets */,
@@ -112,7 +125,6 @@
 				9538B8971DCE64C6007F6996 /* slider2.png */,
 				9538B8981DCE64C6007F6996 /* thumb.png */,
 				9538B87B1DCE62EB007F6996 /* main.m */,
-				9538B8A51DCE8AB0007F6996 /* highscore.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,7 +193,6 @@
 				9538B8991DCE64C6007F6996 /* ball.png in Resources */,
 				9538B89D1DCE64C6007F6996 /* thumb.png in Resources */,
 				9538B89C1DCE64C6007F6996 /* slider2.png in Resources */,
-				9538B8A61DCE8AB0007F6996 /* highscore.plist in Resources */,
 				9538B89B1DCE64C6007F6996 /* slider1.png in Resources */,
 				9538B8851DCE62EB007F6996 /* Main.storyboard in Resources */,
 			);
@@ -195,10 +206,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9538B8821DCE62EB007F6996 /* KappenballViewController.m in Sources */,
+				95197E101DCFCFCF00C7AFCE /* HighScorePlayer.m in Sources */,
 				9538B8931DCE63B1007F6996 /* GameModel.m in Sources */,
 				9538B8B01DCEC858007F6996 /* RootViewController.m in Sources */,
 				9538B87F1DCE62EB007F6996 /* KappenballAppDelegate.m in Sources */,
+				95197E0D1DCFB29E00C7AFCE /* HighScoreTableViewController.m in Sources */,
 				9538B87C1DCE62EB007F6996 /* main.m in Sources */,
+				95197E0A1DCFB15700C7AFCE /* HighScoreTableViewCell.m in Sources */,
 				9538B8A21DCE6F64007F6996 /* ScoreSubmissionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

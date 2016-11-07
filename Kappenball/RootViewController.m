@@ -36,9 +36,28 @@
 // #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"viewScore"]) {
+        HighScoreTableViewController* hsvc = [segue destinationViewController];
+        
+        // Load existing highscore into memory
+        NSString* path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"highscore.archive"];
+        NSFileManager* fileManager = [NSFileManager defaultManager];
+        NSArray* tableHeader = @[@"Rank", @"Name", @"Average Energy", @"Points"];
+        if (![fileManager fileExistsAtPath:path]) {
+            // No existing score found, so just passing in table heading and will display an empty table
+            hsvc.highscores = [[NSArray alloc]initWithObjects:tableHeader, nil];
+        }
+        else {
+            // Existing score found
+            NSMutableArray* highscores = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+            [highscores insertObject:tableHeader atIndex:0];
+            hsvc.highscores = highscores;
+        }
+    }
+}
 
 @end
